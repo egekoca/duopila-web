@@ -32,10 +32,20 @@ function App() {
             <a href="#how-to-buy" className="hover:text-emerald-900 transition">How to Buy</a>
             <a href="#tokenomics" className="hover:text-emerald-900 transition">Tokenomics</a>
             <a href="#faq" className="hover:text-emerald-900 transition">FAQ</a>
-            <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
-               className="bg-white text-[#58CC02] px-4 py-2 rounded-full font-semibold hover:bg-emerald-100 transition">
-              Join Community
-            </a>
+            <div className="flex items-center gap-3">
+              <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer" 
+                 className="bg-white/90 text-[#58CC02] p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 transform">
+                <Twitter size={24} />
+              </a>
+              <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
+                 className="bg-white/90 text-[#58CC02] p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 transform">
+                <MessageCircle size={24} />
+              </a>
+              <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
+                 className="bg-white text-[#58CC02] px-4 py-2 rounded-full font-semibold hover:bg-emerald-100 transition ml-2">
+                Join Community
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -43,21 +53,26 @@ function App() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-32 h-32 mx-auto mb-8" />
-          <h1 className="text-4xl sm:text-7xl font-bold mb-6">DUO PILA ($DUPA)</h1>
-          <p className="text-xl sm:text-2xl mb-8">The world's biggest Duolingo community powered by Dua Lipa</p>
+          <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-8 rounded-full shadow-2xl hover:scale-105 transform transition-transform duration-300 animate-bounce" />
+          <h1 className="text-5xl sm:text-8xl font-extrabold mb-6 tracking-tight hover:scale-105 transform transition-transform duration-300 text-shadow-lg">
+            DUO PILA 
+            <span className="block text-4xl sm:text-7xl text-emerald-200 mt-2 animate-pulse">($DUPA)</span>
+          </h1>
+          <p className="text-2xl sm:text-3xl mb-8 text-emerald-100 font-semibold italic hover:scale-105 transform transition-transform duration-300">
+            The world's biggest Duolingo community powered by Dua Lipa 🚀✨
+          </p>
           
           {/* Contract Address Display */}
-          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-xl mx-auto mb-8 transform hover:scale-105 transition-transform duration-200">
-            <p className="text-sm mb-2 text-emerald-100">Contract Address:</p>
-            <div className="flex items-center justify-center gap-2 bg-white/20 rounded-lg p-3 group cursor-pointer"
+          <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto mb-12 transform hover:scale-105 transition-transform duration-300 border-4 border-emerald-200/30 shadow-xl">
+            <p className="text-2xl mb-4 text-emerald-100 font-bold">🎯 Contract Address 🎯</p>
+            <div className="flex items-center justify-center gap-3 bg-white/30 rounded-xl p-5 group cursor-pointer hover:bg-white/40 transition-all duration-300"
                  onClick={copyToClipboard}>
-              <code className="font-mono text-xs sm:text-sm break-all">{contractAddress}</code>
-              <Copy size={20} className="group-hover:text-emerald-100 transition-colors" />
+              <code className="font-mono text-lg sm:text-xl break-all font-semibold tracking-wider">{contractAddress}</code>
+              <Copy size={28} className="group-hover:text-emerald-200 transition-colors animate-pulse" />
             </div>
             {copied && (
-              <div className="text-sm mt-2 text-emerald-100 animate-fade-in">
-                ✨ Copied to clipboard!
+              <div className="text-xl mt-4 text-emerald-200 animate-fade-in font-bold">
+                ✨ Woohoo! Copied to clipboard! 🚀
               </div>
             )}
           </div>
@@ -198,7 +213,7 @@ function App() {
               }
             ].map((faq, i) => (
               <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors transform hover:scale-105 transition-transform duration-200">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">{faq.q}</h3>
+                <h3 className="text-xl sm:text-2x1 font-bold mb-2">{faq.q}</h3>
                 <p>{faq.a}</p>
               </div>
             ))}
