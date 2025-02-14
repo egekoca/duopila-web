@@ -202,15 +202,14 @@ function App() {
           {/* Trusted By Section */}
           <div className="mt-20 w-full overflow-hidden bg-white/10 backdrop-blur-sm py-8 cartoon-border">
             <h3 className="text-2xl font-bold text-center mb-8 text-shadow-cartoon">Trusted By The Best! 🤝</h3>
-            <div className="flex animate-scroll-left">
-              {[...Array(3)].map((_, groupIndex) => (
-                <div key={groupIndex} className="flex gap-12 mx-12">
+            <div className="scroll-container">
+              <div className="animate-scroll-left">
+                <div className="flex gap-12 mx-12">
                   {[
                     {
                       href: "https://coinmarketcap.com",
                       img: "/cmc.png",
-                      alt: "CoinMarketCap",
-                      rounded: "rounded-lg"
+                      alt: "CoinMarketCap"
                     },
                     {
                       href: "https://coingecko.com",
@@ -223,12 +222,17 @@ function App() {
                       alt: "DexScreener"
                     },
                     {
+                      href: "https://dexview.com",
+                      img: "/dexviewpng.png",
+                      alt: "DexView"
+                    },
+                    {
                       href: "https://pinksale.finance",
                       img: "/pinksale.jpg",
                       alt: "PinkSale"
                     }
                   ].map((partner, i) => (
-                    <a key={`${groupIndex}-${i}`} 
+                    <a key={i} 
                        href={partner.href} 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -236,12 +240,55 @@ function App() {
                       <img 
                         src={partner.img} 
                         alt={partner.alt} 
-                        className={`w-40 h-20 object-contain ${partner.rounded ? partner.rounded : 'rounded-2xl'}`}
+                        className="w-40 h-20 object-contain rounded-2xl"
                       />
                     </a>
                   ))}
                 </div>
-              ))}
+              </div>
+              <div className="animate-scroll-left" style={{ animationDelay: '0s' }}>
+                <div className="flex gap-12 mx-12">
+                  {[
+                    {
+                      href: "https://coinmarketcap.com",
+                      img: "/cmc.png",
+                      alt: "CoinMarketCap"
+                    },
+                    {
+                      href: "https://coingecko.com",
+                      img: "/coingecko.png",
+                      alt: "CoinGecko"
+                    },
+                    {
+                      href: "https://dexscreener.com",
+                      img: "/dexscreener.png",
+                      alt: "DexScreener"
+                    },
+                    {
+                      href: "https://dexview.com",
+                      img: "/dexviewpng.png",
+                      alt: "DexView"
+                    },
+                    {
+                      href: "https://pinksale.finance",
+                      img: "/pinksale.jpg",
+                      alt: "PinkSale"
+                    }
+                  ].map((partner, i) => (
+                    <a key={i} 
+                       href={partner.href} 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="flex items-center justify-center min-w-[200px]">
+                      <img 
+                        src={partner.img} 
+                        alt={partner.alt} 
+                        className="w-40 h-20 object-contain rounded-2xl"
+                      />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -122,17 +122,24 @@ html {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-scroll-left {
   animation: scroll-left 30s linear infinite;
-  min-width: max-content;
+  display: flex;
+  width: fit-content;
 }
 
 .animate-scroll-left:hover {
-  animation-play-state: paused;
+  animation-play-state: running;
+}
+
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Cartoon Paper Effect */
