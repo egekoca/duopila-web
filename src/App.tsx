@@ -98,10 +98,20 @@ function App() {
         </div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="relative inline-block">
-            <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-8 cartoon-border animate-cartoon-bounce" />
-            <div className="absolute -top-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-2 rounded-full animate-wiggle cartoon-border-sm rotate-12">
-              ✨ GEM ✨
+          <div className="relative flex justify-center items-center min-h-[300px] w-full">
+            <div className="absolute left-[15%] transform -translate-x-1/2 text-center">
+              <img src="/pinksalepng.png" alt="PinkSale" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full cartoon-border" />
+              <p className="mt-4 text-2xl font-bold text-shadow-cartoon">PinkSale</p>
+            </div>
+            <div className="relative z-10">
+              <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-48 h-48 sm:w-64 sm:h-64 cartoon-border animate-cartoon-bounce" />
+              <div className="absolute -top-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-2 rounded-full animate-wiggle cartoon-border-sm rotate-12">
+                ✨ GEM ✨
+              </div>
+            </div>
+            <div className="absolute left-[85%] transform -translate-x-1/2 text-center">
+              <img src="/dexviewpng.png" alt="DexView" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full cartoon-border" />
+              <p className="mt-4 text-2xl font-bold text-shadow-cartoon">DexView</p>
             </div>
           </div>
           
