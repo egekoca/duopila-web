@@ -49,27 +49,25 @@ function App() {
       </div>
 
       {/* Simplified Navigation */}
-      <nav className="fixed top-0 w-full bg-[#58CC02]/90 backdrop-blur-sm z-50 px-4 sm:px-6 py-4">
+      <nav className="fixed top-0 w-full bg-[#58CC02] backdrop-blur-sm z-50 px-4 sm:px-6 py-4 shadow-lg border border-[#22c55e] cartoon-border-sm">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
-          <div className="flex items-center gap-2 group">
-            <a href="#" className="flex items-center gap-2 group">
-              <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
-              <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
-            </a>
+          <div className="flex items-center gap-2 group p-2 rounded-xl transition-all duration-300">
+            <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
+            <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
           </div>
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
-            <a href="#how-to-buy" className="hover:text-emerald-900 transition text-shadow-cartoon">How to Buy</a>
-            <a href="#tokenomics" className="hover:text-emerald-900 transition text-shadow-cartoon">Tokenomics</a>
-            <a href="#faq" className="hover:text-emerald-900 transition text-shadow-cartoon">FAQ</a>
+            <a href="#how-to-buy" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">How to Buy</a>
+            <a href="#tokenomics" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">Tokenomics</a>
+            <a href="#faq" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">FAQ</a>
             <div className="flex items-center gap-3">
               <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer" 
-                 className="bg-white/90 text-[#58CC02] p-2 rounded-full cartoon-button">
+                 className="bg-white/90 text-[#58CC02] p-2 rounded-full cartoon-button hover:scale-110 transition-transform">
                 <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
               <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
-                 className="bg-white text-[#58CC02] px-4 py-2 rounded-full font-bold cartoon-button">
+                 className="bg-white text-[#58CC02] px-4 py-2 rounded-full font-bold cartoon-button hover:scale-110 transition-transform">
                 Join Telegram Community
               </a>
             </div>
