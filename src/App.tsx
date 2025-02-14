@@ -338,28 +338,28 @@ function App() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               {
-                icon: <img src="/metamask.png" alt="Metamask" className="w-12 h-12 object-contain" />,
+                icon: <img src="/metamask.png" alt="Metamask" className="w-20 h-20 object-contain" />,
                 title: "1. Ape In With Wallet",
                 desc: "Create any wallet supported by BNB Chain (Metamask = 🐐)"
               },
               {
-                icon: <img src="/bnblogo.png" alt="BNB" className="w-12 h-12 object-contain" />,
+                icon: <img src="/bnblogo.png" alt="BNB" className="w-20 h-20 object-contain" />,
                 title: "2. Load Up BNB",
                 desc: "Stack that BNB from any exchange fren! 💪"
               },
               {
-                icon: <img src="/uniswap.jpg" alt="Uniswap" className="w-12 h-12 object-contain rounded-full" />,
+                icon: <img src="/uniswap.jpg" alt="Uniswap" className="w-20 h-20 object-contain rounded-full" />,
                 title: "3. Swap Like a Chad",
                 desc: "Head to Uniswap & paste our address ser! 🔄"
               },
               {
-                icon: <img src="/duopilalogo.jpg" alt="DUPA" className="w-12 h-12 object-contain rounded-full" />,
+                icon: <img src="/duopilalogo.jpg" alt="DUPA" className="w-20 h-20 object-contain rounded-full" />,
                 title: "4. WAGMI Together",
                 desc: "Welcome to $DUPA fam! 🚀🌙"
               }
             ].map((step, i) => (
               <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors cursor-pointer transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
-                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:animate-spin p-2 cartoon-border">
+                <div className="w-32 h-32 bg-white/90 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:animate-spin p-4 cartoon-border">
                   {step.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-2 text-center">{step.title}</h3>
