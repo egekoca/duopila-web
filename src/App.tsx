@@ -347,7 +347,7 @@ function App() {
                   value: 40.62
                 }
               ].map((item, i) => (
-                <div key={i} className="bg-emerald-700/30 backdrop-blur-sm p-6 rounded-xl hover:bg-emerald-600/40 transition-colors transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-400/30 group">
+                <div key={i} className="bg-emerald-700/30 backdrop-blur-sm p-6 rounded-xl border-2 border-emerald-400/30 group">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-4 h-4 rounded-full" style={{ backgroundColor: item.color }}></div>
                     <h3 className="text-2xl font-bold">{item.title}</h3>
@@ -360,7 +360,7 @@ function App() {
                 <p className="text-white font-semibold text-lg">1,000,000,000 $DUPA</p>
               </div>
             </div>
-            <div className="bg-emerald-700/30 backdrop-blur-sm p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-400/30">
+            <div className="bg-emerald-700/30 backdrop-blur-sm p-6 sm:p-8 rounded-xl border-2 border-emerald-400/30">
               <div className="h-[400px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
