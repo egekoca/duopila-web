@@ -134,3 +134,132 @@ html {
 .animate-scroll-left:hover {
   animation-play-state: paused;
 }
+
+/* Cartoon Paper Effect */
+.cartoon-paper {
+  background-color: rgba(52, 211, 153, 0.3);
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cartoon-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  border-bottom-left-radius: 1.5rem;
+}
+
+.cartoon-paper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(315deg, rgba(0, 0, 0, 0.1), transparent);
+  border-top-right-radius: 1.5rem;
+}
+
+/* Cartoon Background Effect */
+.cartoon-bg {
+  background-color: #22c55e;
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(134, 239, 172, 0.3) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(134, 239, 172, 0.3) 2%, transparent 0%);
+  background-size: 100px 100px;
+  position: relative;
+}
+
+.cartoon-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(134, 239, 172, 0.2) 10px,
+    rgba(134, 239, 172, 0.2) 20px
+  );
+}
+
+/* Folded Paper Effect */
+.folded-paper {
+  background-color: rgba(52, 211, 153, 0.3);
+  position: relative;
+  border-radius: 24px;
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.2),
+    2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.folded-paper::before,
+.folded-paper::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.folded-paper::before {
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  top: -15px;
+  right: -15px;
+  transform: rotate(-5deg);
+  border-bottom-left-radius: 15px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.folded-paper::after {
+  background: linear-gradient(315deg, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  bottom: -15px;
+  left: -15px;
+  transform: rotate(-5deg);
+  border-top-right-radius: 15px;
+  box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.folded-paper-pink {
+  background-color: rgba(34, 197, 94, 0.6);
+  position: relative;
+  border-radius: 24px;
+  box-shadow: 
+    inset 0 0 30px rgba(21, 128, 61, 0.3),
+    8px 8px 0 rgba(21, 128, 61, 0.3);
+  border: 3px solid rgba(21, 128, 61, 0.4);
+}
+
+.folded-paper-pink::before,
+.folded-paper-pink::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.folded-paper-pink::before {
+  background: linear-gradient(135deg, transparent 50%, rgba(34, 197, 94, 0.3) 50%);
+  top: -20px;
+  right: -20px;
+  transform: rotate(-8deg);
+  border-bottom-left-radius: 20px;
+  box-shadow: -12px 12px 12px rgba(21, 128, 61, 0.2);
+}
+
+.folded-paper-pink::after {
+  background: linear-gradient(315deg, transparent 50%, rgba(34, 197, 94, 0.3) 50%);
+  bottom: -20px;
+  left: -20px;
+  transform: rotate(-8deg);
+  border-top-right-radius: 20px;
+  box-shadow: 12px -12px 12px rgba(21, 128, 61, 0.2);
+}

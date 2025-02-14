@@ -238,22 +238,25 @@ function App() {
       </section>
 
       {/* How to Buy Section */}
-      <section id="how-to-buy" className="bg-emerald-600/30 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
+      <section id="how-to-buy" className="py-20 px-4 sm:px-6 relative cartoon-bg">
+        <div className="absolute inset-0 pointer-events-none folded-paper-pink transform rotate-1 backdrop-blur-sm"></div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(10)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <div key={i} 
                  className="absolute animate-float"
                  style={{
                    left: `${Math.random() * 100}%`,
                    top: `${Math.random() * 100}%`,
                    animation: `float ${5 + Math.random() * 5}s infinite`,
-                   animationDelay: `${Math.random() * 5}s`
+                   animationDelay: `${Math.random() * 5}s`,
+                   zIndex: 3,
+                   fontSize: `${Math.random() * 20 + 20}px`
                  }}>
-              {'💰🌟⭐💫✨'[Math.floor(Math.random() * 5)]}
+              {'💰🌟⭐💫✨🎨🎯'[Math.floor(Math.random() * 7)]}
             </div>
           ))}
         </div>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-white text-shadow-cartoon">
             How to Buy $DUPA 
             <span className="block text-2xl mt-2 text-yellow-300 animate-pulse">Easy peasy lemon squeezy! 🍋</span>
@@ -336,7 +339,7 @@ function App() {
                   value: 40.62
                 }
               ].map((item, i) => (
-                <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30 group">
+                <div key={i} className="bg-emerald-700/30 backdrop-blur-sm p-6 rounded-xl hover:bg-emerald-600/40 transition-colors transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-400/30 group">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-4 h-4 rounded-full" style={{ backgroundColor: item.color }}></div>
                     <h3 className="text-2xl font-bold">{item.title}</h3>
@@ -344,12 +347,12 @@ function App() {
                   <p className="text-white font-semibold text-lg">{item.desc}</p>
                 </div>
               ))}
-              <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl border-2 border-emerald-200/30 text-center">
+              <div className="bg-emerald-700/30 backdrop-blur-sm p-6 rounded-xl border-2 border-emerald-400/30 text-center">
                 <p className="text-2xl font-bold text-shadow-cartoon mb-2">Total Supply 💎</p>
                 <p className="text-white font-semibold text-lg">1,000,000,000 $DUPA</p>
               </div>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
+            <div className="bg-emerald-700/30 backdrop-blur-sm p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-400/30">
               <div className="h-[400px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
