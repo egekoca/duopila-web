@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Comic+Neue:wght@400;700&display=swap');
 
 body {
   font-family: 'Comic Neue', cursive;
@@ -13,35 +12,71 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Cartoon Animations */
-@keyframes wobble {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
+/* Cartoon Border Effect */
+.cartoon-border {
+  border: 3px solid;
+  border-color: black;
+  box-shadow: 4px 4px 0px black;
 }
 
-@keyframes bounce-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.cartoon-border-sm {
+  border: 2px solid;
+  border-color: black;
+  box-shadow: 3px 3px 0px black;
 }
 
+/* Cartoon Button Effect */
+.cartoon-button {
+  border: 3px solid black;
+  box-shadow: 4px 4px 0px black;
+  transform: translate(-2px, -2px);
+  transition: all 0.1s ease;
+}
+
+.cartoon-button:hover {
+  transform: translate(0, 0);
+  box-shadow: 0px 0px 0px black;
+}
+
+/* Bounce Animation */
+@keyframes cartoon-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.animate-cartoon-bounce {
+  animation: cartoon-bounce 2s ease-in-out infinite;
+}
+
+/* Wiggle Animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+/* Pop Animation */
 @keyframes pop {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+.animate-pop {
+  animation: pop 0.3s ease-in-out;
 }
 
+/* Float Animation */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0) rotate(0) scale(1);
+    transform: translateY(0) rotate(0);
   }
   50% {
-    transform: translateY(-20px) rotate(10deg) scale(1.1);
+    transform: translateY(-20px) rotate(10deg);
   }
 }
 
@@ -49,48 +84,7 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
-.animate-wobble {
-  animation: wobble 2s ease-in-out infinite;
-}
-
-.animate-bounce-soft {
-  animation: bounce-soft 2s ease-in-out infinite;
-}
-
-.animate-pop {
-  animation: pop 0.3s ease-in-out;
-}
-
-.animate-shake {
-  animation: shake 0.5s ease-in-out;
-}
-
-/* Cartoon Styles */
-.cartoon-border {
-  border: 3px solid black;
-  box-shadow: 4px 4px 0 black;
-}
-
-.cartoon-button {
-  border: 3px solid black;
-  box-shadow: 4px 4px 0 black;
-  transition: all 0.2s;
-}
-
-.cartoon-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 black;
-}
-
-.cartoon-button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 black;
-}
-
-.text-outline {
-  -webkit-text-stroke: 2px black;
-}
-
+/* Rainbow Text */
 @keyframes rainbow {
   0% { color: #ff6b6b; }
   25% { color: #4ecdc4; }
@@ -101,6 +95,10 @@ html {
 
 .animate-rainbow {
   animation: rainbow 5s linear infinite;
+}
+
+.text-shadow-cartoon {
+  text-shadow: 2px 2px 0px black;
 }
 
 @keyframes fade-in {
