@@ -110,10 +110,10 @@ function App() {
           {/* Meme Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
             {[
-              { label: 'Holders', value: '1,337', icon: '👥' },
-              { label: 'Market Cap', value: '$420K', icon: '💰' },
-              { label: 'ATH', value: '+9000%', icon: '📈' },
-              { label: 'To The Moon', value: 'SOON', icon: '🎯' }
+              { label: 'Holders', value: 'TBA', icon: '👥' },
+              { label: 'Market Cap', value: 'TBA', icon: '💰' },
+              { label: 'ATH', value: 'TBA', icon: '📈' },
+              { label: 'Launch Date', value: 'SOON', icon: '🎯' }
             ].map((stat, i) => (
               <div key={i} className="bg-white/20 p-4 rounded-xl cartoon-border hover:animate-pop">
                 <div className="text-4xl mb-2 animate-wiggle">{stat.icon}</div>
