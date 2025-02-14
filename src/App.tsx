@@ -294,6 +294,23 @@ function App() {
         </div>
       </section>
 
+      {/* Reklam Şeridi */}
+      <div className="bg-yellow-400 py-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-[length:200%_200%] animate-gradient"></div>
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <div className="flex items-center justify-center gap-4 text-black font-bold text-2xl">
+            <span>🚀 BUY $DUPA NOW 🚀</span>
+            <div className="flex items-center bg-white/80 px-4 py-2 rounded-full">
+              <code className="font-mono">{contractAddress}</code>
+              <button onClick={copyToClipboard} className="ml-2 hover:scale-110 transition-transform">
+                <Copy size={24} className="text-emerald-600" />
+              </button>
+            </div>
+            <span>🌟 BUY $DUPA NOW 🌟</span>
+          </div>
+        </div>
+      </div>
+
       {/* How to Buy Section */}
       <section id="how-to-buy" className="py-20 px-4 sm:px-6 relative cartoon-bg">
         <div className="absolute inset-0 pointer-events-none folded-paper-pink transform rotate-1 backdrop-blur-sm"></div>
