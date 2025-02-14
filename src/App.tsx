@@ -61,15 +61,13 @@ function App() {
             <div className="flex items-center gap-3">
               <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer" 
                  className="bg-white/90 text-[#58CC02] p-2 rounded-full cartoon-button">
-                <Twitter size={24} />
-              </a>
-              <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
-                 className="bg-white/90 text-[#58CC02] p-2 rounded-full cartoon-button">
-                <MessageCircle size={24} />
+                <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
               <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
                  className="bg-white text-[#58CC02] px-4 py-2 rounded-full font-bold cartoon-button">
-                Join Community
+                Join Telegram Community
               </a>
             </div>
           </div>
@@ -77,8 +75,26 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="pt-32 pb-20 px-4 sm:px-6 relative">
+        {/* Arka plan deseni */}
+        <div className="absolute inset-0 pointer-events-none opacity-40">
+          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-8">
+            {[...Array(48)].map((_, i) => (
+              <img 
+                key={i} 
+                src="/duobaygınkus.jpg" 
+                alt="" 
+                className="w-16 h-16 object-cover animate-float"
+                style={{
+                  animationDelay: `${Math.random() * 5}s`,
+                  transform: `rotate(${Math.random() * 360}deg)`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="relative inline-block">
             <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-8 cartoon-border animate-cartoon-bounce" />
             <div className="absolute -top-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-2 rounded-full animate-wiggle cartoon-border-sm rotate-12">
@@ -106,6 +122,23 @@ function App() {
             <span className="inline-block animate-cartoon-bounce ml-2">✏️</span>
             <span className="inline-block animate-wiggle ml-2">📚</span>
           </p>
+
+          {/* Mission Statement */}
+          <div className="max-w-3xl mx-auto mb-12 bg-white/20 p-6 cartoon-border rounded-xl relative">
+            <div className="absolute -right-3 -top-3 text-4xl animate-wiggle">🎯</div>
+            <div className="absolute -left-3 -bottom-3 text-4xl animate-cartoon-bounce">🎨</div>
+            <p className="text-xl sm:text-2xl text-emerald-100 font-bold text-shadow-cartoon leading-relaxed">
+              Duo Pila Token, a fun and engaging meme token that brings together 
+              <span className="text-yellow-300 inline-block animate-wiggle mx-1">Duolingo users</span> and 
+              <span className="text-yellow-300 inline-block animate-wiggle mx-1">Dua Lipa fans</span> into Web3!
+            </p>
+            <p className="text-lg sm:text-xl text-emerald-100 mt-4 font-bold text-shadow-cartoon leading-relaxed">
+              Our vision is to build the biggest global community where 
+              <span className="text-yellow-300 inline-block animate-wiggle mx-1">language learners</span> and 
+              <span className="text-yellow-300 inline-block animate-wiggle mx-1">music lovers</span> 
+              unite in the crypto space. ✨
+            </p>
+          </div>
 
           {/* Meme Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
@@ -156,7 +189,7 @@ function App() {
       </section>
 
       {/* How to Buy Section */}
-      <section id="how-to-buy" className="bg-white/20 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
+      <section id="how-to-buy" className="bg-emerald-600/30 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[...Array(10)].map((_, i) => (
             <div key={i} 
@@ -172,39 +205,39 @@ function App() {
           ))}
         </div>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 animate-rainbow">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-white text-shadow-cartoon">
             How to Buy $DUPA 
-            <span className="block text-2xl mt-2 text-emerald-200">Easy peasy lemon squeezy! 🍋</span>
+            <span className="block text-2xl mt-2 text-yellow-300 animate-pulse">Easy peasy lemon squeezy! 🍋</span>
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               {
-                icon: <Wallet size={24} />,
+                icon: <img src="/metamask.png" alt="Metamask" className="w-12 h-12 object-contain" />,
                 title: "1. Ape In With Wallet",
                 desc: "Create any wallet supported by BNB Chain (Metamask = 🐐)"
               },
               {
-                icon: <DollarSign size={24} />,
+                icon: <img src="/bnblogo.png" alt="BNB" className="w-12 h-12 object-contain" />,
                 title: "2. Load Up BNB",
                 desc: "Stack that BNB from any exchange fren! 💪"
               },
               {
-                icon: <ArrowRightLeft size={24} />,
+                icon: <img src="/uniswap.jpg" alt="Uniswap" className="w-12 h-12 object-contain rounded-full" />,
                 title: "3. Swap Like a Chad",
                 desc: "Head to Uniswap & paste our address ser! 🔄"
               },
               {
-                icon: <Users size={24} />,
+                icon: <img src="/duopilalogo.jpg" alt="DUPA" className="w-12 h-12 object-contain rounded-full" />,
                 title: "4. WAGMI Together",
                 desc: "Welcome to $DUPA fam! 🚀🌙"
               }
             ].map((step, i) => (
               <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors cursor-pointer transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
-                <div className="w-16 h-16 bg-[#4CAF50] rounded-full flex items-center justify-center mb-4 mx-auto group-hover:animate-spin">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:animate-spin p-2 cartoon-border">
                   {step.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-2 text-center">{step.title}</h3>
-                <p className="text-center text-emerald-100">{step.desc}</p>
+                <p className="text-center text-white font-semibold text-lg">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -212,7 +245,7 @@ function App() {
       </section>
 
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-20 px-4 sm:px-6 relative">
+      <section id="tokenomics" className="py-20 px-4 sm:px-6 relative bg-yellow-500/20 backdrop-blur-sm">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[...Array(10)].map((_, i) => (
             <div key={i} 
@@ -228,9 +261,9 @@ function App() {
           ))}
         </div>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 animate-rainbow">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-white text-shadow-cartoon">
             Tokenomics 
-            <span className="block text-2xl mt-2 text-emerald-200">Perfectly balanced, as all things should be! 💫</span>
+            <span className="block text-2xl mt-2 text-yellow-300 animate-pulse">Perfectly balanced, as all things should be! 💫</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="space-y-6">
@@ -255,33 +288,43 @@ function App() {
                   <div className={`bg-gradient-to-r ${item.color} p-4 rounded-lg mb-4`}>
                     <h3 className="text-2xl font-bold">{item.title}</h3>
                   </div>
-                  <p className="text-emerald-100 text-lg">{item.desc}</p>
+                  <p className="text-white font-semibold text-lg">{item.desc}</p>
                 </div>
               ))}
             </div>
             <div className="bg-white/20 backdrop-blur-sm p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
               <h3 className="text-2xl font-bold mb-6 text-center animate-pulse">Trusted By The Best! 🤝</h3>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 gap-6">
                 {[
                   {
                     href: "https://coinmarketcap.com",
-                    img: "https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg",
-                    alt: "CoinMarketCap"
+                    img: "/cmc.png",
+                    alt: "CoinMarketCap",
+                    rounded: "rounded-lg"
                   },
                   {
                     href: "https://coingecko.com",
-                    img: "https://static.coingecko.com/s/coingecko-logo-white-3f2aeb48e13428b7199395259dbb96280bf47ea05b2940ef7d3e87c61e4d8408.png",
+                    img: "/coingecko.png",
                     alt: "CoinGecko"
                   },
                   {
                     href: "https://dexscreener.com",
-                    img: "https://dexscreener.com/img/dexscreener-light.svg",
+                    img: "/dexscreener.png",
                     alt: "DexScreener"
+                  },
+                  {
+                    href: "https://pinksale.finance",
+                    img: "/pinksale.jpg",
+                    alt: "PinkSale"
                   }
                 ].map((partner, i) => (
                   <a key={i} href={partner.href} target="_blank" rel="noopener noreferrer"
-                     className="bg-white/20 p-4 rounded-lg hover:bg-white/30 transition transform hover:scale-110 group">
-                    <img src={partner.img} alt={partner.alt} className="w-full group-hover:animate-pulse" />
+                     className="bg-white/30 p-6 rounded-xl hover:bg-white/40 transition transform hover:scale-105 cartoon-border flex items-center justify-center min-h-[160px]">
+                    <img 
+                      src={partner.img} 
+                      alt={partner.alt} 
+                      className={`w-48 h-24 object-contain ${partner.rounded ? partner.rounded : 'rounded-2xl'}`}
+                    />
                   </a>
                 ))}
               </div>
@@ -291,7 +334,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-white/20 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
+      <section id="faq" className="bg-emerald-600/20 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[...Array(10)].map((_, i) => (
             <div key={i} 
@@ -302,37 +345,45 @@ function App() {
                    animation: `float ${5 + Math.random() * 5}s infinite`,
                    animationDelay: `${Math.random() * 5}s`
                  }}>
-              {'❓❔💭🤔🎯'[Math.floor(Math.random() * 5)]}
+              {'❓🎯💡⭐✨'[Math.floor(Math.random() * 5)]}
             </div>
           ))}
         </div>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 animate-rainbow">
+          <h2 className="text-4xl sm:text-6xl font-bold text-center mb-4 text-shadow-cartoon">
             FAQ 
-            <span className="block text-2xl mt-2 text-emerald-200">Knowledge is power, fren! 🧠</span>
+            <span className="block text-2xl sm:text-3xl mt-4 text-emerald-200 animate-pulse">Everything You Need to Know! 🧠</span>
           </h2>
-          <div className="space-y-6 max-w-3xl mx-auto">
+          <p className="text-xl text-center mb-12 text-emerald-100">Your questions about Duo Pila, answered with a sprinkle of fun! 🎯</p>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {[
               {
                 q: "What is DUO PILA ($DUPA)? 🤔",
-                a: "We're not just a meme token - we're the most BASED Duolingo community token ever created! 🚀"
+                a: "Not just another meme token - we're the most BASED Duolingo community token ever! Bringing language learning and fun together in the crypto space! 🌟",
+                icon: "🎓"
               },
               {
-                q: "Wen moon? 🌕",
-                a: "NFA but... we're going straight to Uranus! Follow our roadmap and DYOR! 🔥"
+                q: "Why DUO PILA? 🌙",
+                a: "Because we're more than a token - we're a movement! Uniting Duolingo enthusiasts and Dua Lipa fans in the Web3 revolution! Ready to change the game! 🚀",
+                icon: "💫"
               },
               {
-                q: "What's the total supply? 📊",
-                a: "1,000,000,000 $DUPA tokens - perfectly balanced for the moon mission! 🎯"
+                q: "Total Token Supply? 📊",
+                a: "1,000,000,000 $DUPA - Perfectly balanced for our moon mission! Each token represents the strength of our growing community! 🎯",
+                icon: "📈"
               },
               {
-                q: "Wen exchange? 📈",
-                a: "CMC, CG, and major DEX listings incoming! Stay tuned and WAGMI! 🚀"
+                q: "When Exchange Listings? 📱",
+                a: "CMC, CG, and major DEX listings incoming! Get ready, because together we're all gonna make it! WAGMI! 🔥",
+                icon: "🎉"
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
-                <h3 className="text-2xl font-bold mb-2">{faq.q}</h3>
-                <p className="text-emerald-100 text-lg">{faq.a}</p>
+              <div key={i} className="bg-white/20 backdrop-blur-sm p-8 rounded-xl hover:bg-white/30 transition-all transform hover:scale-105 duration-300 border-2 border-emerald-200/30 cartoon-border relative group">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center text-2xl cartoon-border animate-bounce">
+                  {faq.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-shadow-cartoon group-hover:text-yellow-300 transition-colors">{faq.q}</h3>
+                <p className="text-white text-lg leading-relaxed font-semibold">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -340,17 +391,17 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#4CAF50] py-12 px-4 sm:px-6">
+      <footer className="bg-[#4CAF50]/90 backdrop-blur-sm py-12 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Join the DUO PILA Army!</h2>
-          <p className="text-xl mb-8">Don't miss out, join now! 🚀</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-shadow-cartoon">Join the DUO PILA Army!</h2>
+          <p className="text-xl mb-8 text-white font-bold">Don't miss out, join now! 🚀</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer"
                className="flex items-center justify-center gap-2 bg-white text-[#58CC02] px-6 py-3 rounded-full hover:bg-emerald-100 transition font-semibold transform hover:scale-105">
               <MessageCircle size={20} />
               Join Telegram
             </a>
-            <a href="https://twitter.com/duopila" target="_blank" rel="noopener noreferrer"
+            <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer"
                className="flex items-center justify-center gap-2 bg-white text-[#58CC02] px-6 py-3 rounded-full hover:bg-emerald-100 transition font-semibold transform hover:scale-105">
               <Twitter size={20} />
               Follow Twitter
