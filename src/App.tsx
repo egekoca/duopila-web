@@ -10,6 +10,7 @@ import {
   Rocket,
   Moon
 } from 'lucide-react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 function App() {
   const [copied, setCopied] = useState(false);
@@ -51,8 +52,10 @@ function App() {
       <nav className="fixed top-0 w-full bg-[#58CC02]/90 backdrop-blur-sm z-50 px-4 sm:px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
           <div className="flex items-center gap-2 group">
-            <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
-            <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
+            <a href="#" className="flex items-center gap-2 group">
+              <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
+              <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
+            </a>
           </div>
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
             <a href="#how-to-buy" className="hover:text-emerald-900 transition text-shadow-cartoon">How to Buy</a>
@@ -185,6 +188,52 @@ function App() {
               <span className="font-bold text-xl text-shadow-cartoon">Follow Twitter 📚</span>
             </a>
           </div>
+
+          {/* Trusted By Section */}
+          <div className="mt-20 w-full overflow-hidden bg-white/10 backdrop-blur-sm py-8 cartoon-border">
+            <h3 className="text-2xl font-bold text-center mb-8 text-shadow-cartoon">Trusted By The Best! 🤝</h3>
+            <div className="flex animate-scroll-left">
+              {[...Array(3)].map((_, groupIndex) => (
+                <div key={groupIndex} className="flex gap-12 mx-12">
+                  {[
+                    {
+                      href: "https://coinmarketcap.com",
+                      img: "/cmc.png",
+                      alt: "CoinMarketCap",
+                      rounded: "rounded-lg"
+                    },
+                    {
+                      href: "https://coingecko.com",
+                      img: "/coingecko.png",
+                      alt: "CoinGecko"
+                    },
+                    {
+                      href: "https://dexscreener.com",
+                      img: "/dexscreener.png",
+                      alt: "DexScreener"
+                    },
+                    {
+                      href: "https://pinksale.finance",
+                      img: "/pinksale.jpg",
+                      alt: "PinkSale"
+                    }
+                  ].map((partner, i) => (
+                    <a key={`${groupIndex}-${i}`} 
+                       href={partner.href} 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="flex items-center justify-center min-w-[200px]">
+                      <img 
+                        src={partner.img} 
+                        alt={partner.alt} 
+                        className={`w-40 h-20 object-contain ${partner.rounded ? partner.rounded : 'rounded-2xl'}`}
+                      />
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -271,62 +320,88 @@ function App() {
                 {
                   title: "Presale: 40% 🎯",
                   desc: "400,000,000 $DUPA - For the early birds! 🐦",
-                  color: "from-emerald-400 to-emerald-600"
+                  color: "#34D399",
+                  value: 40
                 },
                 {
                   title: "Liquidity: 19.38% 💧",
                   desc: "193,800,000 $DUPA - Locked and loaded! 🔒",
-                  color: "from-blue-400 to-blue-600"
+                  color: "#60A5FA",
+                  value: 19.38
                 },
                 {
                   title: "Team: 40.62% 👑",
                   desc: "406,200,000 $DUPA - BUIDL and HODL! 💪",
-                  color: "from-purple-400 to-purple-600"
+                  color: "#A78BFA",
+                  value: 40.62
                 }
               ].map((item, i) => (
-                <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
-                  <div className={`bg-gradient-to-r ${item.color} p-4 rounded-lg mb-4`}>
+                <div key={i} className="bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/30 transition-colors transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30 group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-4 h-4 rounded-full" style={{ backgroundColor: item.color }}></div>
                     <h3 className="text-2xl font-bold">{item.title}</h3>
                   </div>
                   <p className="text-white font-semibold text-lg">{item.desc}</p>
                 </div>
               ))}
+              <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl border-2 border-emerald-200/30 text-center">
+                <p className="text-2xl font-bold text-shadow-cartoon mb-2">Total Supply 💎</p>
+                <p className="text-white font-semibold text-lg">1,000,000,000 $DUPA</p>
+              </div>
             </div>
             <div className="bg-white/20 backdrop-blur-sm p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-200 border-2 border-emerald-200/30">
-              <h3 className="text-2xl font-bold mb-6 text-center animate-pulse">Trusted By The Best! 🤝</h3>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  {
-                    href: "https://coinmarketcap.com",
-                    img: "/cmc.png",
-                    alt: "CoinMarketCap",
-                    rounded: "rounded-lg"
-                  },
-                  {
-                    href: "https://coingecko.com",
-                    img: "/coingecko.png",
-                    alt: "CoinGecko"
-                  },
-                  {
-                    href: "https://dexscreener.com",
-                    img: "/dexscreener.png",
-                    alt: "DexScreener"
-                  },
-                  {
-                    href: "https://pinksale.finance",
-                    img: "/pinksale.jpg",
-                    alt: "PinkSale"
-                  }
-                ].map((partner, i) => (
-                  <a key={i} href={partner.href} target="_blank" rel="noopener noreferrer"
-                     className="bg-white/30 p-6 rounded-xl hover:bg-white/40 transition transform hover:scale-105 cartoon-border flex items-center justify-center min-h-[160px]">
-                    <img 
-                      src={partner.img} 
-                      alt={partner.alt} 
-                      className={`w-48 h-24 object-contain ${partner.rounded ? partner.rounded : 'rounded-2xl'}`}
+              <div className="h-[400px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: "Presale", value: 40 },
+                        { name: "Liquidity", value: 19.38 },
+                        { name: "Team", value: 40.62 }
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      outerRadius={150}
+                      fill="#8884d8"
+                      dataKey="value"
+                      className="cartoon-border"
+                      label={({ name, value, cx, cy, midAngle, innerRadius, outerRadius }) => {
+                        const RADIAN = Math.PI / 180;
+                        const radius = (innerRadius + outerRadius) / 2;
+                        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                        const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+                        return (
+                          <text
+                            x={x}
+                            y={y}
+                            fill="white"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            className="text-lg font-bold"
+                            style={{ textShadow: '2px 2px 0px black' }}
+                          >
+                            {`${name}\n${value}%`}
+                          </text>
+                        );
+                      }}
+                    >
+                      <Cell fill="#34D399" />
+                      <Cell fill="#60A5FA" />
+                      <Cell fill="#A78BFA" />
+                    </Pie>
+                    <Tooltip 
+                      formatter={(value: any) => `${value}%`}
+                      contentStyle={{ 
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        border: 'none',
+                        borderRadius: '0.5rem',
+                        padding: '0.5rem'
+                      }}
                     />
-                  </a>
-                ))}
+                  </PieChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </div>
