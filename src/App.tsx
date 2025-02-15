@@ -521,27 +521,26 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-gradient-to-br from-emerald-500/30 via-green-400/30 to-teal-400/30 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(10)].map((_, i) => (
-            <div key={i} 
-                 className="absolute animate-float"
-                 style={{
-                   left: `${Math.random() * 100}%`,
-                   top: `${Math.random() * 100}%`,
-                   animation: `float ${5 + Math.random() * 5}s infinite`,
-                   animationDelay: `${Math.random() * 5}s`
-                 }}>
-              {'❓🎯💡⭐✨'[Math.floor(Math.random() * 5)]}
-            </div>
-          ))}
+      <section id="faq" className="py-20 px-4 sm:px-6 relative bg-black">
+        {/* Dalgalı Arka Plan */}
+        <div className="absolute inset-0 bg-[#111] overflow-hidden">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              radial-gradient(circle at 50% 50%, #222 0%, transparent 50%),
+              repeating-linear-gradient(45deg, #111 0%, #222 2%, #111 4%, #111 6%),
+              repeating-linear-gradient(-45deg, #111 0%, #222 2%, #111 4%, #111 6%)
+            `,
+            backgroundSize: '200% 200%, 60px 60px, 60px 60px',
+            animation: 'gradient 15s ease infinite'
+          }}></div>
         </div>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-6xl font-bold text-center mb-4 text-shadow-cartoon">
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <h2 className="text-4xl sm:text-6xl font-bold text-center mb-4 text-white text-shadow-cartoon">
             FAQ 
-            <span className="block text-2xl sm:text-3xl mt-4 text-emerald-200 animate-pulse">Everything You Need to Know! 🧠</span>
+            <span className="block text-2xl sm:text-3xl mt-4 text-[#58CC02] animate-pulse">Everything You Need to Know! 🧠</span>
           </h2>
-          <p className="text-xl text-center mb-12 text-emerald-100">Your questions about Duo Pila, answered with a sprinkle of fun! 🎯</p>
+          <p className="text-xl text-center mb-12 text-[#58CC02]/80">Your questions about Duo Pila, answered with a sprinkle of fun! 🎯</p>
           <div className="max-w-4xl mx-auto space-y-4">
             {[
               {
@@ -565,7 +564,7 @@ function App() {
                 number: "4"
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-white/20 backdrop-blur-sm rounded-xl cartoon-border overflow-hidden">
+              <div key={i} className="bg-[#222]/80 backdrop-blur-sm rounded-xl border-2 border-[#58CC02]/30 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <button 
                   onClick={() => {
                     const element = document.getElementById(`faq-answer-${i}`);
@@ -575,19 +574,19 @@ function App() {
                       arrow.style.transform = arrow.style.transform === 'rotate(180deg)' ? '' : 'rotate(180deg)';
                     }
                   }}
-                  className="w-full p-6 text-left flex items-center gap-4 hover:bg-white/30 transition-all duration-300"
+                  className="w-full p-6 text-left flex items-center gap-4 hover:bg-[#58CC02]/10 transition-all duration-300"
                 >
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold cartoon-border-sm">
+                  <div className="w-8 h-8 rounded-full bg-[#58CC02] flex items-center justify-center text-white font-bold border-2 border-[#4CAF50]">
                     {faq.number}
                   </div>
-                  <span className="text-2xl font-bold text-white text-shadow-cartoon flex-1">{faq.q}</span>
-                  <span id={`faq-arrow-${i}`} className="text-2xl transition-transform duration-300">⌄</span>
+                  <span className="text-2xl font-bold text-white flex-1">{faq.q}</span>
+                  <span id={`faq-arrow-${i}`} className="text-2xl transition-transform duration-300 text-[#58CC02]">⌄</span>
                 </button>
                 <div 
                   id={`faq-answer-${i}`}
-                  className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                  className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-[#58CC02]/5"
                 >
-                  <p className="p-6 pt-0 text-xl text-emerald-100 font-bold">{faq.a}</p>
+                  <p className="p-6 pt-0 text-xl text-[#58CC02]/90 font-bold">{faq.a}</p>
                 </div>
               </div>
             ))}
