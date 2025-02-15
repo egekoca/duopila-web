@@ -168,19 +168,29 @@ function App() {
           </div>
           
           {/* Contract Address Display */}
-          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto mb-12 cartoon-border relative overflow-hidden z-20">
-            <div className="absolute -right-10 -top-10 text-9xl opacity-10 animate-wiggle">✏️</div>
-            <p className="text-2xl mb-4 text-emerald-100 font-bold text-shadow-cartoon">📝 Contract Address 📝</p>
-            <div className="flex items-center justify-center gap-3 bg-white/30 rounded-xl p-5 group cursor-pointer hover:animate-pop cartoon-border-sm"
-                 onClick={copyToClipboard}>
-              <code className="font-mono text-lg sm:text-xl break-all font-bold text-shadow-cartoon">{contractAddress}</code>
-              <Copy size={28} className="group-hover:animate-wiggle" />
-            </div>
-            {copied && (
-              <div className="text-xl mt-4 text-emerald-200 animate-pop font-bold text-shadow-cartoon">
-                ✨ Yay! Copied to clipboard! ✨
+          <div className="relative mb-12">
+            {/* BNB Logoları */}
+            <img src="/bnblogo.png" alt="" className="absolute -left-20 top-10 w-24 h-24 animate-float" />
+            <img src="/bnblogo.png" alt="" className="absolute -right-20 top-10 w-24 h-24 animate-float" style={{ animationDelay: '0.5s' }} />
+            <img src="/bnblogo.png" alt="" className="absolute left-10 -top-16 w-20 h-20 animate-float" style={{ animationDelay: '1s' }} />
+            <img src="/bnblogo.png" alt="" className="absolute right-10 -top-16 w-20 h-20 animate-float" style={{ animationDelay: '1.5s' }} />
+            <img src="/bnblogo.png" alt="" className="absolute left-1/4 -bottom-16 w-20 h-20 animate-float" style={{ animationDelay: '2s' }} />
+            <img src="/bnblogo.png" alt="" className="absolute right-1/4 -bottom-16 w-20 h-20 animate-float" style={{ animationDelay: '2.5s' }} />
+
+            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto cartoon-border relative z-20">
+              <div className="absolute -right-10 -top-10 text-9xl opacity-10 animate-wiggle">✏️</div>
+              <p className="text-2xl mb-4 text-emerald-100 font-bold text-shadow-cartoon">📝 Contract Address 📝</p>
+              <div className="flex items-center justify-center gap-3 bg-white/30 rounded-xl p-5 group cursor-pointer hover:animate-pop cartoon-border-sm"
+                   onClick={copyToClipboard}>
+                <code className="font-mono text-lg sm:text-xl break-all font-bold text-shadow-cartoon">{contractAddress}</code>
+                <Copy size={28} className="group-hover:animate-wiggle" />
               </div>
-            )}
+              {copied && (
+                <div className="text-xl mt-4 text-emerald-200 animate-pop font-bold text-shadow-cartoon">
+                  ✨ Yay! Copied to clipboard! ✨
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Social Links */}
