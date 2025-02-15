@@ -381,7 +381,32 @@ function App() {
       </section>
 
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-20 px-4 sm:px-6 relative bg-yellow-500/20 backdrop-blur-sm">
+      <section id="tokenomics" className="py-20 px-4 sm:px-6 relative bg-gradient-to-br from-emerald-600/40 via-teal-600/40 to-cyan-600/40 backdrop-blur-sm">
+        {/* Para ve Ekonomi Sembolleri */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Dolar Sembolleri */}
+          <div className="absolute top-10 left-10 text-8xl text-yellow-300/20 animate-float">$</div>
+          <div className="absolute bottom-10 right-10 text-9xl text-pink-400/20 animate-float" style={{ animationDelay: '1s' }}>$</div>
+          <div className="absolute top-1/3 right-20 text-7xl text-cyan-400/20 animate-float" style={{ animationDelay: '2s' }}>$</div>
+          
+          {/* Bitcoin Sembolleri */}
+          <div className="absolute top-20 right-32 text-8xl text-yellow-300/20 animate-float" style={{ animationDelay: '0.5s' }}>₿</div>
+          <div className="absolute bottom-32 left-20 text-7xl text-pink-400/20 animate-float" style={{ animationDelay: '1.5s' }}>₿</div>
+          
+          {/* Ethereum Sembolleri */}
+          <div className="absolute top-1/2 left-32 text-8xl text-cyan-400/20 animate-float" style={{ animationDelay: '1s' }}>Ξ</div>
+          <div className="absolute bottom-1/4 right-1/4 text-7xl text-yellow-300/20 animate-float" style={{ animationDelay: '2s' }}>Ξ</div>
+
+          {/* Yüzde Sembolleri */}
+          <div className="absolute top-1/4 left-1/4 text-8xl text-emerald-300/20 animate-float" style={{ animationDelay: '0.7s' }}>%</div>
+          <div className="absolute bottom-1/3 right-1/3 text-9xl text-yellow-300/20 animate-float" style={{ animationDelay: '1.7s' }}>%</div>
+
+          {/* Para Birimleri */}
+          <div className="absolute top-40 left-1/3 text-7xl text-pink-400/20 animate-float" style={{ animationDelay: '1.2s' }}>¥</div>
+          <div className="absolute bottom-40 right-1/3 text-8xl text-cyan-400/20 animate-float" style={{ animationDelay: '2.2s' }}>€</div>
+        </div>
+
+        {/* Mevcut içerik */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[...Array(10)].map((_, i) => (
             <div key={i} 
@@ -392,7 +417,7 @@ function App() {
                    animation: `float ${5 + Math.random() * 5}s infinite`,
                    animationDelay: `${Math.random() * 5}s`
                  }}>
-              {'🪙💎💰🤑💸'[Math.floor(Math.random() * 5)]}
+              {'💰💎💵💸💲'[Math.floor(Math.random() * 5)]}
             </div>
           ))}
         </div>
@@ -407,36 +432,36 @@ function App() {
                 {
                   title: "Presale: 40% 🎯",
                   desc: "400,000,000 $DUPA - For the early birds! 🐦",
-                  color: "#34D399",
+                  color: "#22D3EE",
                   value: 40
                 },
                 {
                   title: "Liquidity: 19.38% 💧",
                   desc: "193,800,000 $DUPA - Locked and loaded! 🔒",
-                  color: "#60A5FA",
+                  color: "#F472B6",
                   value: 19.38
                 },
                 {
                   title: "Team: 40.62% 👑",
                   desc: "406,200,000 $DUPA - BUIDL and HODL! 💪",
-                  color: "#A78BFA",
+                  color: "#FCD34D",
                   value: 40.62
                 }
               ].map((item, i) => (
-                <div key={i} className="bg-emerald-700/30 backdrop-blur-sm p-6 rounded-xl border-2 border-emerald-400/30 group">
+                <div key={i} className="bg-white/40 backdrop-blur-sm p-6 rounded-xl border-2 border-yellow-400/50 group hover:bg-white/50 transition-all duration-300">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-4 h-4 rounded-full" style={{ backgroundColor: item.color }}></div>
-                    <h3 className="text-2xl font-bold">{item.title}</h3>
+                    <div className="w-4 h-4 rounded-full animate-pulse" style={{ backgroundColor: item.color }}></div>
+                    <h3 className="text-2xl font-bold text-white text-shadow-cartoon">{item.title}</h3>
                   </div>
-                  <p className="text-white font-semibold text-lg">{item.desc}</p>
+                  <p className="text-emerald-100 font-bold text-lg tracking-wide leading-relaxed">{item.desc}</p>
                 </div>
               ))}
-              <div className="bg-emerald-700/30 backdrop-blur-sm p-6 rounded-xl border-2 border-emerald-400/30 text-center">
-                <p className="text-2xl font-bold text-shadow-cartoon mb-2">Total Supply 💎</p>
-                <p className="text-white font-semibold text-lg">1,000,000,000 $DUPA</p>
+              <div className="bg-white/40 backdrop-blur-sm p-6 rounded-xl border-2 border-yellow-400/50 text-center hover:bg-white/50 transition-all duration-300">
+                <p className="text-2xl font-bold text-shadow-cartoon mb-2 text-white">Total Supply 💎</p>
+                <p className="text-emerald-100 font-bold text-lg tracking-wide">1,000,000,000 $DUPA</p>
               </div>
             </div>
-            <div className="bg-emerald-700/30 backdrop-blur-sm p-6 sm:p-8 rounded-xl border-2 border-emerald-400/30">
+            <div className="bg-white/30 backdrop-blur-sm p-6 sm:p-8 rounded-xl border-2 border-yellow-400/50 hover:bg-white/40 transition-all duration-300">
               <div className="h-[400px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
@@ -474,9 +499,9 @@ function App() {
                         );
                       }}
                     >
-                      <Cell fill="#34D399" />
-                      <Cell fill="#60A5FA" />
-                      <Cell fill="#A78BFA" />
+                      <Cell fill="#22D3EE" />
+                      <Cell fill="#F472B6" />
+                      <Cell fill="#FCD34D" />
                     </Pie>
                     <Tooltip 
                       formatter={(value: any) => `${value}%`}
