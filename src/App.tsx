@@ -521,7 +521,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-emerald-600/20 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
+      <section id="faq" className="bg-gradient-to-br from-emerald-500/30 via-green-400/30 to-teal-400/30 backdrop-blur-sm py-20 px-4 sm:px-6 relative">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[...Array(10)].map((_, i) => (
             <div key={i} 
@@ -542,35 +542,53 @@ function App() {
             <span className="block text-2xl sm:text-3xl mt-4 text-emerald-200 animate-pulse">Everything You Need to Know! 🧠</span>
           </h2>
           <p className="text-xl text-center mb-12 text-emerald-100">Your questions about Duo Pila, answered with a sprinkle of fun! 🎯</p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-4">
             {[
               {
                 q: "What is DUO PILA ($DUPA)? 🤔",
                 a: "Not just another meme token - we're the most BASED Duolingo community token ever! Bringing language learning and fun together in the crypto space! 🌟",
-                icon: "🎓"
+                number: "1"
               },
               {
                 q: "Why DUO PILA? 🌙",
                 a: "Because we're more than a token - we're a movement! Uniting Duolingo enthusiasts and Dua Lipa fans in the Web3 revolution! Ready to change the game! 🚀",
-                icon: "💫"
+                number: "2"
               },
               {
                 q: "Total Token Supply? 📊",
                 a: "1,000,000,000 $DUPA - Perfectly balanced for our moon mission! Each token represents the strength of our growing community! 🎯",
-                icon: "📈"
+                number: "3"
               },
               {
                 q: "When Exchange Listings? 📱",
                 a: "CMC, CG, and major DEX listings incoming! Get ready, because together we're all gonna make it! WAGMI! 🔥",
-                icon: "🎉"
+                number: "4"
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-white/20 backdrop-blur-sm p-8 rounded-xl hover:bg-white/30 transition-all transform hover:scale-105 duration-300 border-2 border-emerald-200/30 cartoon-border relative group">
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center text-2xl cartoon-border animate-bounce">
-                  {faq.icon}
+              <div key={i} className="bg-white/20 backdrop-blur-sm rounded-xl cartoon-border overflow-hidden">
+                <button 
+                  onClick={() => {
+                    const element = document.getElementById(`faq-answer-${i}`);
+                    const arrow = document.getElementById(`faq-arrow-${i}`);
+                    if (element && arrow) {
+                      element.style.maxHeight = element.style.maxHeight ? '' : `${element.scrollHeight}px`;
+                      arrow.style.transform = arrow.style.transform === 'rotate(180deg)' ? '' : 'rotate(180deg)';
+                    }
+                  }}
+                  className="w-full p-6 text-left flex items-center gap-4 hover:bg-white/30 transition-all duration-300"
+                >
+                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold cartoon-border-sm">
+                    {faq.number}
+                  </div>
+                  <span className="text-2xl font-bold text-white text-shadow-cartoon flex-1">{faq.q}</span>
+                  <span id={`faq-arrow-${i}`} className="text-2xl transition-transform duration-300">⌄</span>
+                </button>
+                <div 
+                  id={`faq-answer-${i}`}
+                  className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                >
+                  <p className="p-6 pt-0 text-xl text-emerald-100 font-bold">{faq.a}</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-shadow-cartoon group-hover:text-yellow-300 transition-colors">{faq.q}</h3>
-                <p className="text-white text-lg leading-relaxed font-semibold">{faq.a}</p>
               </div>
             ))}
           </div>
