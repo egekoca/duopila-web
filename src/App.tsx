@@ -78,9 +78,9 @@ function App() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 relative">
         {/* Arka plan deseni */}
-        <div className="absolute inset-0 pointer-events-none opacity-40">
+        <div className="absolute inset-0 pointer-events-none opacity-40 h-[150%]">
           <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-8">
-            {[...Array(48)].map((_, i) => (
+            {[...Array(96)].map((_, i) => (
               <img 
                 key={i} 
                 src="/duobaygınkus.jpg" 
@@ -119,23 +119,23 @@ function App() {
           </h1>
 
           {/* Live Price Ticker */}
-          <div className="bg-emerald-500/30 p-4 rounded-xl mb-8 cartoon-border">
+          <div className="bg-emerald-500/30 p-4 rounded-xl mb-8 cartoon-border backdrop-blur-md relative z-20">
             <p className="text-3xl font-bold text-shadow-cartoon">
-              💰 Price: ${price.toFixed(8)} 
+              💰 Price: TBA 
               <span className="text-yellow-300 ml-2 animate-wiggle inline-block">
-                +1% every 3s ✨
+                Coming Soon ✨
               </span>
             </p>
           </div>
 
-          <p className="text-2xl sm:text-3xl mb-8 text-emerald-100 font-bold text-shadow-cartoon hover:animate-pop">
+          <p className="text-2xl sm:text-3xl mb-8 text-emerald-100 font-bold text-shadow-cartoon hover:animate-pop relative z-20">
             The world's biggest Duolingo community powered by Dua Lipa 
             <span className="inline-block animate-cartoon-bounce ml-2">✏️</span>
             <span className="inline-block animate-wiggle ml-2">📚</span>
           </p>
 
           {/* Mission Statement */}
-          <div className="max-w-3xl mx-auto mb-12 bg-white/20 p-6 cartoon-border rounded-xl relative">
+          <div className="max-w-3xl mx-auto mb-12 bg-white/20 p-6 cartoon-border rounded-xl relative z-20 backdrop-blur-md">
             <div className="absolute -right-3 -top-3 text-4xl animate-wiggle">🎯</div>
             <div className="absolute -left-3 -bottom-3 text-4xl animate-cartoon-bounce">🎨</div>
             <p className="text-xl sm:text-2xl text-emerald-100 font-bold text-shadow-cartoon leading-relaxed">
@@ -152,14 +152,14 @@ function App() {
           </div>
 
           {/* Meme Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 relative z-20">
             {[
               { label: 'Holders', value: 'TBA', icon: '👥' },
               { label: 'Market Cap', value: 'TBA', icon: '💰' },
               { label: 'ATH', value: 'TBA', icon: '📈' },
               { label: 'Launch Date', value: 'SOON', icon: '🎯' }
             ].map((stat, i) => (
-              <div key={i} className="bg-white/20 p-4 rounded-xl cartoon-border hover:animate-pop">
+              <div key={i} className="bg-white/20 p-4 rounded-xl cartoon-border hover:animate-pop backdrop-blur-md">
                 <div className="text-4xl mb-2 animate-wiggle">{stat.icon}</div>
                 <div className="text-xl font-bold text-shadow-cartoon">{stat.value}</div>
                 <div className="text-sm text-emerald-200">{stat.label}</div>
@@ -168,7 +168,7 @@ function App() {
           </div>
           
           {/* Contract Address Display */}
-          <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto mb-12 cartoon-border relative overflow-hidden">
+          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto mb-12 cartoon-border relative overflow-hidden z-20">
             <div className="absolute -right-10 -top-10 text-9xl opacity-10 animate-wiggle">✏️</div>
             <p className="text-2xl mb-4 text-emerald-100 font-bold text-shadow-cartoon">📝 Contract Address 📝</p>
             <div className="flex items-center justify-center gap-3 bg-white/30 rounded-xl p-5 group cursor-pointer hover:animate-pop cartoon-border-sm"
