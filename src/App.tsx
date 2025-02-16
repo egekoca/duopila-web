@@ -66,10 +66,10 @@ function App() {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
-              <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
+            <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer" 
                  className="bg-white text-[#58CC02] px-4 py-2 rounded-full font-bold cartoon-button hover:scale-110 transition-transform">
                 Join Telegram Community
-              </a>
+            </a>
             </div>
           </div>
         </div>
@@ -181,15 +181,15 @@ function App() {
               <div className="absolute -right-10 -top-10 text-9xl opacity-10 animate-wiggle">✏️</div>
               <p className="text-2xl mb-4 text-emerald-100 font-bold text-shadow-cartoon">📝 Contract Address 📝</p>
               <div className="flex items-center justify-center gap-3 bg-white/30 rounded-xl p-5 group cursor-pointer hover:animate-pop cartoon-border-sm"
-                   onClick={copyToClipboard}>
+                 onClick={copyToClipboard}>
                 <code className="font-mono text-lg sm:text-xl break-all font-bold text-shadow-cartoon">{contractAddress}</code>
                 <Copy size={28} className="group-hover:animate-wiggle" />
               </div>
               {copied && (
                 <div className="text-xl mt-4 text-emerald-200 animate-pop font-bold text-shadow-cartoon">
                   ✨ Yay! Copied to clipboard! ✨
-                </div>
-              )}
+              </div>
+            )}
             </div>
           </div>
 
@@ -522,25 +522,28 @@ function App() {
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-4 sm:px-6 relative bg-black">
-        {/* Dalgalı Arka Plan */}
-        <div className="absolute inset-0 bg-[#111] overflow-hidden">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 50% 50%, #222 0%, transparent 50%),
-              repeating-linear-gradient(45deg, #111 0%, #222 2%, #111 4%, #111 6%),
-              repeating-linear-gradient(-45deg, #111 0%, #222 2%, #111 4%, #111 6%)
-            `,
-            backgroundSize: '200% 200%, 60px 60px, 60px 60px',
-            animation: 'gradient 15s ease infinite'
-          }}></div>
-        </div>
+        {/* Dalgalı Arka Plan Efekti */}
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `radial-gradient(circle at 50% 50%, #58CC02 0%, transparent 50%),
+                           radial-gradient(circle at 100% 0%, #58CC02 0%, transparent 50%),
+                           radial-gradient(circle at 0% 100%, #58CC02 0%, transparent 50%)`,
+          backgroundSize: '100% 100%',
+          filter: 'blur(100px)'
+        }}></div>
+
+        {/* Izgara Deseni */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `linear-gradient(to right, #58CC02 1px, transparent 1px),
+                           linear-gradient(to bottom, #58CC02 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-4xl sm:text-6xl font-bold text-center mb-4 text-white text-shadow-cartoon">
             FAQ 
             <span className="block text-2xl sm:text-3xl mt-4 text-[#58CC02] animate-pulse">Everything You Need to Know! 🧠</span>
           </h2>
-          <p className="text-xl text-center mb-12 text-[#58CC02]/80">Your questions about Duo Pila, answered with a sprinkle of fun! 🎯</p>
+          <p className="text-xl text-center mb-12 text-gray-300">Your questions about Duo Pila, answered with a sprinkle of fun! 🎯</p>
           <div className="max-w-4xl mx-auto space-y-4">
             {[
               {
@@ -564,7 +567,7 @@ function App() {
                 number: "4"
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-[#222]/80 backdrop-blur-sm rounded-xl border-2 border-[#58CC02]/30 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div key={i} className="bg-black/50 backdrop-blur-md rounded-xl border border-[#58CC02]/30 overflow-hidden hover:border-[#58CC02]/50 transition-all duration-300">
                 <button 
                   onClick={() => {
                     const element = document.getElementById(`faq-answer-${i}`);
@@ -574,9 +577,9 @@ function App() {
                       arrow.style.transform = arrow.style.transform === 'rotate(180deg)' ? '' : 'rotate(180deg)';
                     }
                   }}
-                  className="w-full p-6 text-left flex items-center gap-4 hover:bg-[#58CC02]/10 transition-all duration-300"
+                  className="w-full p-6 text-left flex items-center gap-4 hover:bg-[#58CC02]/5 transition-all duration-300"
                 >
-                  <div className="w-8 h-8 rounded-full bg-[#58CC02] flex items-center justify-center text-white font-bold border-2 border-[#4CAF50]">
+                  <div className="w-8 h-8 rounded-full bg-[#58CC02] flex items-center justify-center text-white font-bold">
                     {faq.number}
                   </div>
                   <span className="text-2xl font-bold text-white flex-1">{faq.q}</span>
@@ -584,9 +587,9 @@ function App() {
                 </button>
                 <div 
                   id={`faq-answer-${i}`}
-                  className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-[#58CC02]/5"
+                  className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
                 >
-                  <p className="p-6 pt-0 text-xl text-[#58CC02]/90 font-bold">{faq.a}</p>
+                  <p className="p-6 pt-0 text-xl text-gray-300 font-bold border-t border-[#58CC02]/20">{faq.a}</p>
                 </div>
               </div>
             ))}
