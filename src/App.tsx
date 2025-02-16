@@ -76,18 +76,17 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 relative">
-        {/* Arka plan deseni */}
-        <div className="absolute inset-0 pointer-events-none opacity-40 h-[150%]">
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-8">
-            {[...Array(96)].map((_, i) => (
+      <section className="min-h-screen relative bg-[#58CC02] overflow-hidden">
+        {/* Arka plan deseni - Baygin Kus */}
+        <div className="absolute inset-0 pointer-events-none opacity-10">
+          <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-8">
+            {[...Array(80)].map((_, i) => (
               <img 
                 key={i} 
                 src="/duobaygınkus.jpg" 
                 alt="" 
-                className="w-16 h-16 object-cover animate-float"
+                className="w-16 h-16 object-cover"
                 style={{
-                  animationDelay: `${Math.random() * 5}s`,
                   transform: `rotate(${Math.random() * 360}deg)`
                 }}
               />
@@ -95,209 +94,102 @@ function App() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="relative flex justify-center items-center min-h-[300px] w-full">
-            <div className="absolute left-[15%] transform -translate-x-1/2 text-center">
-              <img src="/pinksalepng.png" alt="PinkSale" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full cartoon-border" />
-              <p className="mt-4 text-2xl font-bold text-shadow-cartoon">PinkSale</p>
-            </div>
-            <div className="relative z-10">
-              <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-48 h-48 sm:w-64 sm:h-64 cartoon-border animate-cartoon-bounce" />
-              <div className="absolute -top-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-2 rounded-full animate-wiggle cartoon-border-sm rotate-12">
-                ✨ GEM ✨
+        {/* Ana İçerik */}
+        <div className="max-w-7xl mx-auto h-screen flex items-center px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+            {/* Sol Taraf - Başlık ve Açıklama */}
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-8xl font-black text-yellow-400 mb-2 text-shadow-cartoon">
+                  DUO PILA
+                </h1>
+                <p className="text-5xl text-white font-bold text-shadow-cartoon">($DUPA)</p>
               </div>
-            </div>
-            <div className="absolute left-[85%] transform -translate-x-1/2 text-center">
-              <img src="/dexviewpng.png" alt="DexView" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full cartoon-border" />
-              <p className="mt-4 text-2xl font-bold text-shadow-cartoon">DexView</p>
-            </div>
-          </div>
-          
-          <h1 className="text-5xl sm:text-8xl font-extrabold mb-6 tracking-tight text-shadow-cartoon hover:animate-pop">
-            DUO PILA 
-            <span className="block text-4xl sm:text-7xl text-emerald-200 mt-2 animate-wiggle">($DUPA)</span>
-          </h1>
+              
+              <p className="text-2xl text-white font-bold leading-relaxed text-shadow-cartoon">
+                The world's biggest Duolingo community powered by Dua Lipa
+              </p>
 
-          {/* Live Price Ticker */}
-          <div className="bg-emerald-500/30 p-4 rounded-xl mb-8 cartoon-border backdrop-blur-md relative z-20">
-            <p className="text-3xl font-bold text-shadow-cartoon">
-              💰 Price: TBA 
-              <span className="text-yellow-300 ml-2 animate-wiggle inline-block">
-                Coming Soon ✨
-              </span>
-            </p>
-          </div>
-
-          <p className="text-2xl sm:text-3xl mb-8 text-emerald-100 font-bold text-shadow-cartoon hover:animate-pop relative z-20">
-            The world's biggest Duolingo community powered by Dua Lipa 
-            <span className="inline-block animate-cartoon-bounce ml-2">✏️</span>
-            <span className="inline-block animate-wiggle ml-2">📚</span>
-          </p>
-
-          {/* Mission Statement */}
-          <div className="max-w-3xl mx-auto mb-12 bg-white/20 p-6 cartoon-border rounded-xl relative z-20 backdrop-blur-md">
-            <div className="absolute -right-3 -top-3 text-4xl animate-wiggle">🎯</div>
-            <div className="absolute -left-3 -bottom-3 text-4xl animate-cartoon-bounce">🎨</div>
-            <p className="text-xl sm:text-2xl text-emerald-100 font-bold text-shadow-cartoon leading-relaxed">
-              Duo Pila Token, a fun and engaging meme token that brings together 
-              <span className="text-yellow-300 inline-block animate-wiggle mx-1">Duolingo users</span> and 
-              <span className="text-yellow-300 inline-block animate-wiggle mx-1">Dua Lipa fans</span> into Web3!
-            </p>
-            <p className="text-lg sm:text-xl text-emerald-100 mt-4 font-bold text-shadow-cartoon leading-relaxed">
-              Our vision is to build the biggest global community where 
-              <span className="text-yellow-300 inline-block animate-wiggle mx-1">language learners</span> and 
-              <span className="text-yellow-300 inline-block animate-wiggle mx-1">music lovers</span> 
-              unite in the crypto space. ✨
-            </p>
-          </div>
-
-          {/* Meme Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 relative z-20">
-            {[
-              { label: 'Holders', value: 'TBA', icon: '👥' },
-              { label: 'Market Cap', value: 'TBA', icon: '💰' },
-              { label: 'ATH', value: 'TBA', icon: '📈' },
-              { label: 'Launch Date', value: 'SOON', icon: '🎯' }
-            ].map((stat, i) => (
-              <div key={i} className="bg-white/20 p-4 rounded-xl cartoon-border hover:animate-pop backdrop-blur-md">
-                <div className="text-4xl mb-2 animate-wiggle">{stat.icon}</div>
-                <div className="text-xl font-bold text-shadow-cartoon">{stat.value}</div>
-                <div className="text-sm text-emerald-200">{stat.label}</div>
+              {/* Contract Address */}
+              <div className="bg-white/20 backdrop-blur-md p-6 rounded-xl cartoon-border">
+                <p className="text-xl mb-3 text-emerald-100 font-bold text-shadow-cartoon">Contract Address</p>
+                <div className="flex items-center gap-3 bg-white/30 rounded-xl p-4 group cursor-pointer hover:bg-white/40 transition-all"
+                     onClick={copyToClipboard}>
+                  <code className="font-mono text-lg break-all text-white font-bold">{contractAddress}</code>
+                  <Copy size={24} className="text-white group-hover:scale-110 transition-transform" />
+                </div>
+                {copied && (
+                  <p className="text-emerald-200 mt-2 animate-pop">✨ Copied!</p>
+                )}
               </div>
-            ))}
-          </div>
-          
-          {/* Contract Address Display */}
-          <div className="relative mb-12">
-            {/* BNB Logoları */}
-            <img src="/bnblogo.png" alt="" className="absolute -left-20 top-10 w-24 h-24 animate-float" />
-            <img src="/bnblogo.png" alt="" className="absolute -right-20 top-10 w-24 h-24 animate-float" style={{ animationDelay: '0.5s' }} />
-            <img src="/bnblogo.png" alt="" className="absolute left-10 -top-16 w-20 h-20 animate-float" style={{ animationDelay: '1s' }} />
-            <img src="/bnblogo.png" alt="" className="absolute right-10 -top-16 w-20 h-20 animate-float" style={{ animationDelay: '1.5s' }} />
-            <img src="/bnblogo.png" alt="" className="absolute left-1/4 -bottom-16 w-20 h-20 animate-float" style={{ animationDelay: '2s' }} />
-            <img src="/bnblogo.png" alt="" className="absolute right-1/4 -bottom-16 w-20 h-20 animate-float" style={{ animationDelay: '2.5s' }} />
 
-            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto cartoon-border relative z-20">
-              <div className="absolute -right-10 -top-10 text-9xl opacity-10 animate-wiggle">✏️</div>
-              <p className="text-2xl mb-4 text-emerald-100 font-bold text-shadow-cartoon">📝 Contract Address 📝</p>
-              <div className="flex items-center justify-center gap-3 bg-white/30 rounded-xl p-5 group cursor-pointer hover:animate-pop cartoon-border-sm"
-                 onClick={copyToClipboard}>
-                <code className="font-mono text-lg sm:text-xl break-all font-bold text-shadow-cartoon">{contractAddress}</code>
-                <Copy size={28} className="group-hover:animate-wiggle" />
-              </div>
-              {copied && (
-                <div className="text-xl mt-4 text-emerald-200 animate-pop font-bold text-shadow-cartoon">
-                  ✨ Yay! Copied to clipboard! ✨
-              </div>
-            )}
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
-            <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer"
-               className="flex items-center justify-center gap-2 bg-[#4CAF50] px-8 py-4 rounded-full cartoon-button group">
-              <MessageCircle size={24} className="group-hover:animate-wiggle" />
-              <span className="font-bold text-xl text-shadow-cartoon">Join Telegram ✨</span>
-            </a>
-            <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer"
-               className="flex items-center justify-center gap-2 bg-[#4CAF50] px-8 py-4 rounded-full cartoon-button group">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current group-hover:animate-wiggle">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              <span className="font-bold text-xl text-shadow-cartoon">Follow X 📚</span>
-            </a>
-          </div>
-
-          {/* Trusted By Section */}
-          <div className="mt-20 w-full overflow-hidden bg-white/10 backdrop-blur-sm py-8 cartoon-border">
-            <h3 className="text-2xl font-bold text-center mb-8 text-shadow-cartoon">Trusted By The Best! 🤝</h3>
-            <div className="scroll-container">
-              <div className="animate-scroll-left">
-                <div className="flex gap-12 mx-12">
-                  {[
-                    {
-                      href: "https://coinmarketcap.com",
-                      img: "/cmc.png",
-                      alt: "CoinMarketCap"
-                    },
-                    {
-                      href: "https://coingecko.com",
-                      img: "/coingecko.png",
-                      alt: "CoinGecko"
-                    },
-                    {
-                      href: "https://dexscreener.com",
-                      img: "/dexscreener.png",
-                      alt: "DexScreener"
-                    },
-                    {
-                      href: "https://dexview.com",
-                      img: "/dexviewpng.png",
-                      alt: "DexView"
-                    },
-                    {
-                      href: "https://pinksale.finance",
-                      img: "/pinksale.jpg",
-                      alt: "PinkSale"
-                    }
-                  ].map((partner, i) => (
-                    <a key={i} 
-                       href={partner.href} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="flex items-center justify-center min-w-[200px]">
-                      <img 
-                        src={partner.img} 
-                        alt={partner.alt} 
-                        className="w-40 h-20 object-contain rounded-2xl"
-                      />
-                    </a>
-                  ))}
+              {/* Partnership */}
+              <div>
+                <h3 className="text-3xl font-bold mb-6 text-white text-shadow-cartoon">Partnerships</h3>
+                <div className="flex items-center gap-8">
+                  <div className="group">
+                    <img src="/pinksalepng.png" alt="PinkSale" className="w-32 h-32 rounded-full bg-white p-4 cartoon-border group-hover:scale-105 transition-transform duration-300" />
+                    <p className="mt-2 text-center text-white font-bold text-shadow-cartoon">PinkSale</p>
+                  </div>
+                  <div className="group">
+                    <img src="/dexviewpng.png" alt="DexView" className="w-32 h-32 rounded-full bg-white p-4 cartoon-border group-hover:scale-105 transition-transform duration-300" />
+                    <p className="mt-2 text-center text-white font-bold text-shadow-cartoon">DexView</p>
+                  </div>
                 </div>
               </div>
-              <div className="animate-scroll-left" style={{ animationDelay: '0s' }}>
-                <div className="flex gap-12 mx-12">
-                  {[
-                    {
-                      href: "https://coinmarketcap.com",
-                      img: "/cmc.png",
-                      alt: "CoinMarketCap"
-                    },
-                    {
-                      href: "https://coingecko.com",
-                      img: "/coingecko.png",
-                      alt: "CoinGecko"
-                    },
-                    {
-                      href: "https://dexscreener.com",
-                      img: "/dexscreener.png",
-                      alt: "DexScreener"
-                    },
-                    {
-                      href: "https://dexview.com",
-                      img: "/dexviewpng.png",
-                      alt: "DexView"
-                    },
-                    {
-                      href: "https://pinksale.finance",
-                      img: "/pinksale.jpg",
-                      alt: "PinkSale"
-                    }
-                  ].map((partner, i) => (
-                    <a key={i} 
-                       href={partner.href} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="flex items-center justify-center min-w-[200px]">
-                      <img 
-                        src={partner.img} 
-                        alt={partner.alt} 
-                        className="w-40 h-20 object-contain rounded-2xl"
-                      />
-                    </a>
-                  ))}
+            </div>
+
+            {/* Sağ Taraf - Logo */}
+            <div className="flex justify-center items-center">
+              <div className="relative">
+                <img 
+                  src="/duopilalogo.jpg" 
+                  alt="DUO PILA" 
+                  className="w-[500px] h-[500px] object-cover rounded-full cartoon-border shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute -right-4 -top-4 bg-yellow-400 text-black font-bold px-6 py-3 rounded-full animate-wiggle cartoon-border-sm rotate-12">
+                  ✨ GEM ✨
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What is DUO PILA Section */}
+      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#45a049] via-[#58CC02] to-[#22c55e]">
+        <div className="absolute inset-0 bg-[#58CC02]/20 backdrop-blur-sm"></div>
+        
+        <div className="max-w-7xl mx-auto h-screen flex items-center px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Sol Taraf - Logo */}
+            <div className="flex justify-center">
+              <img 
+                src="/duopilalogo.jpg" 
+                alt="DUO PILA" 
+                className="w-[600px] h-[600px] object-cover rounded-full cartoon-border shadow-2xl"
+              />
+            </div>
+
+            {/* Sağ Taraf - Açıklama */}
+            <div className="space-y-8">
+              <h2 className="text-6xl font-black text-yellow-400 mb-8 text-shadow-cartoon">
+                What is
+                <span className="block text-white mt-2">DUO PILA?</span>
+              </h2>
+              
+              <div className="bg-white/20 backdrop-blur-md p-8 rounded-xl cartoon-border space-y-6">
+                <p className="text-xl text-white font-bold leading-relaxed text-shadow-cartoon">
+                  Duo Pila ($DUPA) is a revolutionary meme token that brings together the vibrant Duolingo community and Dua Lipa fans in an exciting Web3 ecosystem.
+                </p>
+                
+                <p className="text-xl text-white font-bold leading-relaxed text-shadow-cartoon">
+                  Our mission is to create the largest global community where language learning enthusiasts and music lovers unite, fostering a unique blend of education and entertainment in the crypto space.
+                </p>
+
+                <p className="text-xl text-white font-bold leading-relaxed text-shadow-cartoon">
+                  With innovative features and a strong community focus, Duo Pila is set to revolutionize how people engage with language learning and music in the blockchain world.
+                </p>
               </div>
             </div>
           </div>
