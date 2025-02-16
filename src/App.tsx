@@ -56,6 +56,7 @@ function App() {
             <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
           </div>
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+            <a href="#what-is-duopila" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">What is DUO PILA</a>
             <a href="#how-to-buy" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">How to Buy</a>
             <a href="#tokenomics" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">Tokenomics</a>
             <a href="#faq" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">FAQ</a>
@@ -157,7 +158,7 @@ function App() {
       </section>
 
       {/* What is DUO PILA Section */}
-      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#45a049] via-[#58CC02] to-[#22c55e]">
+      <section id="what-is-duopila" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#45a049] via-[#58CC02] to-[#22c55e]">
         <div className="absolute inset-0 bg-[#58CC02]/20 backdrop-blur-sm"></div>
         
         <div className="max-w-7xl mx-auto h-screen flex items-center px-4 relative z-10">
