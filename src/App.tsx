@@ -637,23 +637,28 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0a2e0a] backdrop-blur-sm py-12 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-shadow-cartoon">Join the DUO PILA Army!</h2>
-          <p className="text-xl mb-8 text-white font-bold">Don't miss out, join now! 🚀</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer"
-               className="flex items-center justify-center gap-2 bg-white text-[#58CC02] px-6 py-3 rounded-full hover:bg-emerald-100 transition font-semibold transform hover:scale-105">
-              <MessageCircle size={20} />
-              Join Telegram
-            </a>
-            <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer"
-               className="flex items-center justify-center gap-2 bg-white text-[#58CC02] px-6 py-3 rounded-full hover:bg-emerald-100 transition font-semibold transform hover:scale-105">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              Follow X
-            </a>
+      <footer className="bg-[#020802] backdrop-blur-sm py-12 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto relative">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2">
+            <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-48 h-48 rounded-full cartoon-border" />
+          </div>
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-shadow-cartoon">Join the <span className="text-[#58CC02]">DUO PILA</span> Army!</h2>
+            <p className="text-xl mb-8 text-white font-bold">Don't miss out, join now! 🚀</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="https://t.me/duopila" target="_blank" rel="noopener noreferrer"
+                 className="flex items-center justify-center gap-2 bg-white text-[#58CC02] px-6 py-3 rounded-full hover:bg-emerald-100 transition font-semibold transform hover:scale-105">
+                <MessageCircle size={20} />
+                Join Telegram
+              </a>
+              <a href="https://x.com/DuaPila_Token" target="_blank" rel="noopener noreferrer"
+                 className="flex items-center justify-center gap-2 bg-white text-[#58CC02] px-6 py-3 rounded-full hover:bg-emerald-100 transition font-semibold transform hover:scale-105">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                Follow X
+              </a>
+            </div>
           </div>
         </div>
       </footer>
