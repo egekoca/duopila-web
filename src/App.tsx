@@ -52,8 +52,10 @@ function App() {
       <nav className="fixed top-0 w-full bg-[#58CC02] backdrop-blur-sm z-50 px-4 sm:px-6 py-4 shadow-lg border border-[#22c55e] cartoon-border-sm">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
           <div className="flex items-center gap-2 group p-2 rounded-xl transition-all duration-300">
-            <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
-            <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
+            <a href="#" className="flex items-center gap-2">
+              <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
+              <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
+            </a>
           </div>
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
             <a href="#what-is-duopila" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">What is DUO PILA</a>
@@ -235,7 +237,7 @@ function App() {
               }}
             >
               <img 
-                src="/binancesade.png" 
+                src="/bnbtokenpng.png" 
                 alt="BNB" 
                 className="w-24 h-24 object-contain bg-white rounded-full p-3 cartoon-border-sm"
                 style={{
@@ -433,9 +435,9 @@ function App() {
                 className="transform"
               >
                 <img 
-                  src="/binancesade.png" 
+                  src="/bnbpng.png" 
                   alt="BNB" 
-                  className="w-[800px] h-[800px] object-contain opacity-10"
+                  className="w-[500px] h-[500px] object-contain opacity-10"
                   style={{
                     filter: 'brightness(0.8) contrast(1.2) hue-rotate(60deg)'
                   }}
