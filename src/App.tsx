@@ -77,9 +77,12 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen relative bg-[#58CC02] overflow-hidden">
+      <section className="min-h-screen relative bg-transparent overflow-hidden">
+        {/* Yeşil Arka Plan */}
+        <div className="absolute inset-0 bg-[#58CC02]" style={{ zIndex: 1 }}></div>
+        
         {/* Arka plan deseni - Baygin Kus */}
-        <div className="absolute inset-0 pointer-events-none opacity-10">
+        <div className="absolute inset-0 pointer-events-none opacity-10" style={{ zIndex: 2 }}>
           <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-8">
             {[...Array(80)].map((_, i) => (
               <img 
@@ -96,7 +99,7 @@ function App() {
         </div>
 
         {/* Ana İçerik */}
-        <div className="max-w-7xl mx-auto h-screen flex items-center px-4 relative z-10">
+        <div className="max-w-7xl mx-auto h-screen flex items-center px-4 relative" style={{ zIndex: 3 }}>
           <div className="grid md:grid-cols-2 gap-12 items-center w-full">
             {/* Sol Taraf - Başlık ve Açıklama */}
             <div className="space-y-8">
@@ -115,7 +118,7 @@ function App() {
               <div className="bg-white/20 backdrop-blur-md p-6 rounded-xl cartoon-border">
                 <p className="text-xl mb-3 text-emerald-100 font-bold text-shadow-cartoon">Contract Address</p>
                 <div className="flex items-center gap-3 bg-white/30 rounded-xl p-4 group cursor-pointer hover:bg-white/40 transition-all"
-                     onClick={copyToClipboard}>
+                 onClick={copyToClipboard}>
                   <code className="font-mono text-lg break-all text-white font-bold">{contractAddress}</code>
                   <Copy size={24} className="text-white group-hover:scale-110 transition-transform" />
                 </div>
@@ -153,6 +156,33 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Ağaç Dalı ve Kuşlar */}
+        <div className="absolute bottom-0 left-0 w-full" style={{ zIndex: 4 }}>
+          {/* Ağaç Dalı */}
+          <div className="relative">
+            <div className="w-full bg-[#8B4513] transform shadow-lg" style={{ height: '7vh' }}></div>
+          </div>
+          
+          {/* Kuşlar */}
+          <div className="flex justify-between items-end px-8 absolute w-full" style={{ zIndex: 5, bottom: '5.5vh' }}>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="relative">
+                <img 
+                  src="/duopilapng.png"
+                  alt="Duo Pila Bird"
+                  className="w-24 h-24 object-contain"
+                  style={{
+                    filter: 'brightness(1.2) contrast(1.1)',
+                    transformOrigin: 'bottom center',
+                    position: 'relative',
+                    marginBottom: '-2px'
+                  }}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
