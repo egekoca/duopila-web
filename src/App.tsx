@@ -235,7 +235,7 @@ function App() {
               }}
             >
               <img 
-                src="/bnbtokenpng.png" 
+                src="/binancesade.png" 
                 alt="BNB" 
                 className="w-24 h-24 object-contain bg-white rounded-full p-3 cartoon-border-sm"
                 style={{
@@ -433,9 +433,9 @@ function App() {
                 className="transform"
               >
                 <img 
-                  src="/bnbpng.png" 
+                  src="/binancesade.png" 
                   alt="BNB" 
-                  className="w-[500px] h-[500px] object-contain opacity-10"
+                  className="w-[800px] h-[800px] object-contain opacity-10"
                   style={{
                     filter: 'brightness(0.8) contrast(1.2) hue-rotate(60deg)'
                   }}
