@@ -415,29 +415,34 @@ function App() {
       </section>
 
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-20 px-4 sm:px-6 relative bg-gradient-to-br from-emerald-600/40 via-teal-600/40 to-cyan-600/40 backdrop-blur-sm">
-        {/* Para ve Ekonomi Sembolleri */}
+      <section id="tokenomics" className="min-h-screen relative overflow-hidden bg-[#0a2e0a]">
+        {/* Arka plan deseni */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `repeating-linear-gradient(45deg, rgba(34, 197, 94, 0.05) 0px, rgba(34, 197, 94, 0.05) 2px, transparent 2px, transparent 12px)`,
+            backgroundSize: '24px 24px'
+          }}></div>
+        </div>
+
+        {/* BNB Logoları */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Dolar Sembolleri */}
-          <div className="absolute top-10 left-10 text-8xl text-yellow-300/20 animate-float">$</div>
-          <div className="absolute bottom-10 right-10 text-9xl text-pink-400/20 animate-float" style={{ animationDelay: '1s' }}>$</div>
-          <div className="absolute top-1/3 right-20 text-7xl text-cyan-400/20 animate-float" style={{ animationDelay: '2s' }}>$</div>
-          
-          {/* Bitcoin Sembolleri */}
-          <div className="absolute top-20 right-32 text-8xl text-yellow-300/20 animate-float" style={{ animationDelay: '0.5s' }}>₿</div>
-          <div className="absolute bottom-32 left-20 text-7xl text-pink-400/20 animate-float" style={{ animationDelay: '1.5s' }}>₿</div>
-          
-          {/* Ethereum Sembolleri */}
-          <div className="absolute top-1/2 left-32 text-8xl text-cyan-400/20 animate-float" style={{ animationDelay: '1s' }}>Ξ</div>
-          <div className="absolute bottom-1/4 right-1/4 text-7xl text-yellow-300/20 animate-float" style={{ animationDelay: '2s' }}>Ξ</div>
-
-          {/* Yüzde Sembolleri */}
-          <div className="absolute top-1/4 left-1/4 text-8xl text-emerald-300/20 animate-float" style={{ animationDelay: '0.7s' }}>%</div>
-          <div className="absolute bottom-1/3 right-1/3 text-9xl text-yellow-300/20 animate-float" style={{ animationDelay: '1.7s' }}>%</div>
-
-          {/* Para Birimleri */}
-          <div className="absolute top-40 left-1/3 text-7xl text-pink-400/20 animate-float" style={{ animationDelay: '1.2s' }}>¥</div>
-          <div className="absolute bottom-40 right-1/3 text-8xl text-cyan-400/20 animate-float" style={{ animationDelay: '2.2s' }}>€</div>
+          <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between px-20">
+            {[1, 2, 3].map((_, i) => (
+              <div
+                key={i}
+                className="transform"
+              >
+                <img 
+                  src="/bnbpng.png" 
+                  alt="BNB" 
+                  className="w-[500px] h-[500px] object-contain opacity-10"
+                  style={{
+                    filter: 'brightness(0.8) contrast(1.2) hue-rotate(60deg)'
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mevcut içerik */}
@@ -455,29 +460,29 @@ function App() {
             </div>
           ))}
         </div>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto pt-32">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-white text-shadow-cartoon">
             Tokenomics 
-            <span className="block text-2xl mt-2 text-yellow-300 animate-pulse">Perfectly balanced, as all things should be! 💫</span>
+            <span className="block text-2xl mt-2 text-yellow-300 animate-pulse">Perfectly balanced, as all things should be!</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="space-y-6">
               {[
                 {
-                  title: "Presale: 40% 🎯",
-                  desc: "400,000,000 $DUPA - For the early birds! 🐦",
+                  title: "Presale: 40%",
+                  desc: "400,000,000 $DUPA - For the early birds",
                   color: "#22D3EE",
                   value: 40
                 },
                 {
-                  title: "Liquidity: 19.38% 💧",
-                  desc: "193,800,000 $DUPA - Locked and loaded! 🔒",
+                  title: "Liquidity: 19.38%",
+                  desc: "193,800,000 $DUPA - Locked and loaded",
                   color: "#F472B6",
                   value: 19.38
                 },
                 {
-                  title: "Team: 40.62% 👑",
-                  desc: "406,200,000 $DUPA - BUIDL and HODL! 💪",
+                  title: "Team: 40.62%",
+                  desc: "406,200,000 $DUPA - BUIDL and HODL",
                   color: "#FCD34D",
                   value: 40.62
                 }
@@ -491,7 +496,7 @@ function App() {
                 </div>
               ))}
               <div className="bg-white/40 backdrop-blur-sm p-6 rounded-xl border-2 border-yellow-400/50 text-center hover:bg-white/50 transition-all duration-300">
-                <p className="text-2xl font-bold text-shadow-cartoon mb-2 text-white">Total Supply 💎</p>
+                <p className="text-2xl font-bold text-shadow-cartoon mb-2 text-white">Total Supply</p>
                 <p className="text-emerald-100 font-bold text-lg tracking-wide">1,000,000,000 $DUPA</p>
               </div>
             </div>
@@ -632,7 +637,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#4CAF50]/90 backdrop-blur-sm py-12 px-4 sm:px-6">
+      <footer className="bg-[#0a2e0a] backdrop-blur-sm py-12 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-shadow-cartoon">Join the DUO PILA Army!</h2>
           <p className="text-xl mb-8 text-white font-bold">Don't miss out, join now! 🚀</p>
