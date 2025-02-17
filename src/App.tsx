@@ -163,7 +163,21 @@ function App() {
         <div className="absolute bottom-0 left-0 w-full" style={{ zIndex: 4 }}>
           {/* Ağaç Dalı */}
           <div className="relative">
-            <div className="w-full bg-[#8B4513] transform shadow-lg" style={{ height: '7vh' }}></div>
+            <div className="w-full bg-[#8B4513] transform shadow-lg" style={{ 
+              height: '7vh',
+              backgroundImage: `
+                linear-gradient(0deg, rgba(255,255,255,0.07) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255,255,255,0.07) 2px, transparent 2px),
+                linear-gradient(0deg, rgba(255,255,255,0.05) 3px, transparent 3px)
+              `,
+              backgroundSize: '100% 15px, 100% 25px, 100% 35px',
+              boxShadow: `
+                0 1px 2px rgba(255,255,255,0.1),
+                0 -1px 2px rgba(0,0,0,0.1),
+                inset 0 2px 5px rgba(255,255,255,0.08),
+                inset 0 -2px 5px rgba(0,0,0,0.08)
+              `
+            }}></div>
           </div>
           
           {/* Kuşlar */}
