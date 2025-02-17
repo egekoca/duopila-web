@@ -206,6 +206,46 @@ function App() {
         {/* Dalgalı arka plan animasyonu */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#58CC02]/20 via-[#45a049]/30 to-[#22c55e]/20"></div>
         
+        {/* BNB Logo Animasyonları */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[
+            { left: '5%', top: '10%' },
+            { left: '85%', top: '15%' },
+            { left: '25%', top: '25%' },
+            { left: '65%', top: '30%' },
+            { left: '15%', top: '40%' },
+            { left: '90%', top: '45%' },
+            { left: '40%', top: '50%' },
+            { left: '75%', top: '55%' },
+            { left: '10%', top: '65%' },
+            { left: '50%', top: '70%' },
+            { left: '85%', top: '75%' },
+            { left: '30%', top: '80%' },
+            { left: '60%', top: '85%' },
+            { left: '20%', top: '90%' }
+          ].map((position, i) => (
+            <div
+              key={i}
+              className="absolute transform"
+              style={{
+                left: position.left,
+                top: position.top,
+                animation: `float ${8 + i}s infinite ${i * 0.5}s`,
+                zIndex: 5
+              }}
+            >
+              <img 
+                src="/bnbtokenpng.png" 
+                alt="BNB" 
+                className="w-24 h-24 object-contain bg-white rounded-full p-3 cartoon-border-sm"
+                style={{
+                  filter: 'brightness(1.2) contrast(1.2)'
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
         {/* Dalgalı çizgiler */}
         <div className="absolute inset-0" style={{
           background: `
@@ -282,7 +322,7 @@ function App() {
               
               <div className="bg-white/20 backdrop-blur-md p-8 rounded-xl cartoon-border space-y-6">
                 <p className="text-xl text-white font-bold leading-relaxed text-shadow-cartoon">
-                  Duo Pila ($DUPA) is a revolutionary meme token that brings together the vibrant Duolingo community and Dua Lipa fans in an exciting Web3 ecosystem.
+                  Duo Pila (<span className="text-yellow-400">$DUPA</span>) is a revolutionary meme token that brings together the vibrant Duolingo community and Dua Lipa fans in an exciting Web3 ecosystem.
                 </p>
                 
                 <p className="text-xl text-white font-bold leading-relaxed text-shadow-cartoon">
@@ -347,7 +387,7 @@ function App() {
                 desc: "Create any wallet supported by BNB Chain (Metamask = 🐐)"
               },
               {
-                icon: <img src="/bnblogo.png" alt="BNB" className="w-20 h-20 object-contain" />,
+                icon: <img src="/bnbtokenpng.png" alt="BNB" className="w-20 h-20 object-contain" />,
                 title: "2. Load Up BNB",
                 desc: "Stack that BNB from any exchange fren! 💪"
               },
