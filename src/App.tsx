@@ -372,7 +372,7 @@ function App() {
                    zIndex: 3,
                    fontSize: `${Math.random() * 20 + 20}px`
                  }}>
-              {'💰🌟⭐💫✨🎨🎯'[Math.floor(Math.random() * 7)]}
+              {['⭐', '✨', '💫', '🌟', '💎', '🚀', '🌙'][Math.floor(Math.random() * 7)]}
             </div>
           ))}
         </div>
@@ -458,7 +458,7 @@ function App() {
                    animation: `float ${5 + Math.random() * 5}s infinite`,
                    animationDelay: `${Math.random() * 5}s`
                  }}>
-              {'💰💎💵💸💲'[Math.floor(Math.random() * 5)]}
+              {['💎', '⭐', '✨', '💫', '🌟'][Math.floor(Math.random() * 5)]}
             </div>
           ))}
         </div>
