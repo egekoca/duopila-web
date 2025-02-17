@@ -202,9 +202,66 @@ function App() {
       </section>
 
       {/* What is DUO PILA Section */}
-      <section id="what-is-duopila" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#45a049] via-[#58CC02] to-[#22c55e]">
-        <div className="absolute inset-0 bg-[#58CC02]/20 backdrop-blur-sm"></div>
+      <section id="what-is-duopila" className="min-h-screen relative overflow-hidden bg-black">
+        {/* Dalgalı arka plan animasyonu */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#58CC02]/20 via-[#45a049]/30 to-[#22c55e]/20"></div>
         
+        {/* Dalgalı çizgiler */}
+        <div className="absolute inset-0" style={{
+          background: `
+            repeating-linear-gradient(
+              35deg,
+              transparent,
+              transparent 20px,
+              rgba(88, 204, 2, 0.03) 20px,
+              rgba(88, 204, 2, 0.03) 40px
+            ),
+            repeating-linear-gradient(
+              -35deg,
+              transparent,
+              transparent 20px,
+              rgba(34, 197, 94, 0.03) 20px,
+              rgba(34, 197, 94, 0.03) 40px
+            )
+          `
+        }}></div>
+
+        {/* Hareketli dalgalar */}
+        <div className="absolute inset-0 opacity-30">
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute inset-0 transform"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='2000' height='200' viewBox='0 0 2000 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%2358CC02' stroke-width='2' d='M0 50c500-100 500 100 1000 0c500-100 500 100 1000 0' /%3E%3C/svg%3E")`,
+                backgroundRepeat: 'repeat-x',
+                backgroundPosition: `${i * 30}% ${85 + i * 5}%`,
+                animation: `wave ${15 + i * 5}s linear infinite`,
+                opacity: 0.1 + i * 0.1
+              }}
+            ></div>
+          ))}
+        </div>
+
+        {/* Parıltı efekti */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                width: `${Math.random() * 4 + 2}px`,
+                height: `${Math.random() * 4 + 2}px`,
+                backgroundColor: '#58CC02',
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.3,
+                animation: `twinkle ${Math.random() * 3 + 2}s infinite ${Math.random() * 2}s`
+              }}
+            ></div>
+          ))}
+        </div>
+
         <div className="max-w-7xl mx-auto h-screen flex items-center px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Sol Taraf - Logo */}
