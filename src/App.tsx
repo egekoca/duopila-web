@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Copy, 
   MessageCircle, 
@@ -15,6 +15,8 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 function App() {
   const [copied, setCopied] = useState(false);
   const [price, setPrice] = useState(0.00000001);
+  const [resetKey, setResetKey] = useState(0);
+  const tokenomicsRef = useRef(null);
   const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
 
   useEffect(() => {
@@ -22,6 +24,29 @@ function App() {
       setPrice(prev => prev * 1.01); // Her 3 saniyede %1 artış
     }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setResetKey(prev => prev + 1); // Her görünür olduğunda resetKey'i artır
+          }
+        });
+      },
+      { threshold: 0.3 } // Bölümün %30'u görünür olduğunda tetiklen
+    );
+
+    if (tokenomicsRef.current) {
+      observer.observe(tokenomicsRef.current);
+    }
+
+    return () => {
+      if (tokenomicsRef.current) {
+        observer.unobserve(tokenomicsRef.current);
+      }
+    };
   }, []);
 
   const copyToClipboard = () => {
@@ -52,10 +77,8 @@ function App() {
       <nav className="fixed top-0 w-full bg-[#58CC02] backdrop-blur-sm z-50 px-4 sm:px-6 py-4 shadow-lg border border-[#22c55e] cartoon-border-sm">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
           <div className="flex items-center gap-2 group p-2 rounded-xl transition-all duration-300">
-            <a href="#" className="flex items-center gap-2">
-              <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
-              <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
-            </a>
+            <img src="/duopilalogo.jpg" alt="DUO PILA" className="w-10 h-10 cartoon-border animate-wiggle" />
+            <span className="text-2xl font-bold text-shadow-cartoon group-hover:animate-pop">DUO PILA</span>
           </div>
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
             <a href="#what-is-duopila" className="nav-link hover:text-yellow-300 transition text-shadow-cartoon px-4 py-2 rounded-xl">What is DUO PILA</a>
@@ -372,7 +395,7 @@ function App() {
                    zIndex: 3,
                    fontSize: `${Math.random() * 20 + 20}px`
                  }}>
-              {['⭐', '✨', '💫', '🌟', '💎', '🚀', '🌙'][Math.floor(Math.random() * 7)]}
+              {'💰🌟⭐💫✨🎨🎯'[Math.floor(Math.random() * 7)]}
             </div>
           ))}
         </div>
@@ -417,7 +440,7 @@ function App() {
       </section>
 
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="min-h-screen relative overflow-hidden bg-[#0a2e0a]">
+      <section id="tokenomics" ref={tokenomicsRef} className="min-h-screen relative overflow-hidden bg-[#0a2e0a]">
         {/* Arka plan deseni */}
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
@@ -458,7 +481,7 @@ function App() {
                    animation: `float ${5 + Math.random() * 5}s infinite`,
                    animationDelay: `${Math.random() * 5}s`
                  }}>
-              {['💎', '⭐', '✨', '💫', '🌟'][Math.floor(Math.random() * 5)]}
+              {'💰💎💵💸💲'[Math.floor(Math.random() * 5)]}
             </div>
           ))}
         </div>
@@ -507,6 +530,7 @@ function App() {
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
+                      key={resetKey}
                       data={[
                         { name: "Presale", value: 40 },
                         { name: "Liquidity", value: 19.38 },
@@ -519,6 +543,10 @@ function App() {
                       fill="#8884d8"
                       dataKey="value"
                       className="cartoon-border"
+                      animationBegin={0}
+                      animationDuration={2000}
+                      startAngle={360}
+                      endAngle={0}
                       label={({ name, value, cx, cy, midAngle, innerRadius, outerRadius }) => {
                         const RADIAN = Math.PI / 180;
                         const radius = (innerRadius + outerRadius) / 2;
